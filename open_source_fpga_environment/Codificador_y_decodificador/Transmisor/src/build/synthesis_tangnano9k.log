@@ -1,0 +1,959 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.26+1 (git sha1 b1a011138, x86_64-w64-mingw32-g++ 9.2.1 -Os)
+
+
+-- Running command `read_verilog -sv ../design/bin_to_7seg.sv ../design/error_generator.sv ../design/hamming74_enc.sv ../design/top.sv ; synth_gowin -top transmitter_top -json Transmisor.json' --
+
+1. Executing Verilog-2005 frontend: ../design/bin_to_7seg.sv
+Parsing SystemVerilog input from `../design/bin_to_7seg.sv' to AST representation.
+Generating RTLIL representation for module `\bin_to_7seg'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: ../design/error_generator.sv
+Parsing SystemVerilog input from `../design/error_generator.sv' to AST representation.
+Generating RTLIL representation for module `\error_generator'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: ../design/hamming74_enc.sv
+Parsing SystemVerilog input from `../design/hamming74_enc.sv' to AST representation.
+Generating RTLIL representation for module `\hamming74_enc'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: ../design/top.sv
+Parsing SystemVerilog input from `../design/top.sv' to AST representation.
+Generating RTLIL representation for module `\transmitter_top'.
+Successfully finished Verilog frontend.
+
+5. Executing SYNTH_GOWIN pass.
+
+5.1. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\LUT1'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\LUT3'.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\__APICULA_LUT5'.
+Generating RTLIL representation for module `\__APICULA_LUT6'.
+Generating RTLIL representation for module `\__APICULA_LUT7'.
+Generating RTLIL representation for module `\__APICULA_LUT8'.
+Generating RTLIL representation for module `\MUX2'.
+Generating RTLIL representation for module `\MUX2_LUT5'.
+Generating RTLIL representation for module `\MUX2_LUT6'.
+Generating RTLIL representation for module `\MUX2_LUT7'.
+Generating RTLIL representation for module `\MUX2_LUT8'.
+Generating RTLIL representation for module `\DFF'.
+Generating RTLIL representation for module `\DFFE'.
+Generating RTLIL representation for module `\DFFS'.
+Generating RTLIL representation for module `\DFFSE'.
+Generating RTLIL representation for module `\DFFR'.
+Generating RTLIL representation for module `\DFFRE'.
+Generating RTLIL representation for module `\DFFP'.
+Generating RTLIL representation for module `\DFFPE'.
+Generating RTLIL representation for module `\DFFC'.
+Generating RTLIL representation for module `\DFFCE'.
+Generating RTLIL representation for module `\DFFN'.
+Generating RTLIL representation for module `\DFFNE'.
+Generating RTLIL representation for module `\DFFNS'.
+Generating RTLIL representation for module `\DFFNSE'.
+Generating RTLIL representation for module `\DFFNR'.
+Generating RTLIL representation for module `\DFFNRE'.
+Generating RTLIL representation for module `\DFFNP'.
+Generating RTLIL representation for module `\DFFNPE'.
+Generating RTLIL representation for module `\DFFNC'.
+Generating RTLIL representation for module `\DFFNCE'.
+Generating RTLIL representation for module `\VCC'.
+Generating RTLIL representation for module `\GND'.
+Generating RTLIL representation for module `\IBUF'.
+Generating RTLIL representation for module `\OBUF'.
+Generating RTLIL representation for module `\TBUF'.
+Generating RTLIL representation for module `\IOBUF'.
+Generating RTLIL representation for module `\TLVDS_OBUF'.
+Generating RTLIL representation for module `\ODDR'.
+Generating RTLIL representation for module `\ODDRC'.
+Generating RTLIL representation for module `\GSR'.
+Generating RTLIL representation for module `\ALU'.
+Generating RTLIL representation for module `\RAM16S1'.
+Generating RTLIL representation for module `\RAM16S2'.
+Generating RTLIL representation for module `\RAM16S4'.
+Generating RTLIL representation for module `\RAM16SDP1'.
+Generating RTLIL representation for module `\RAM16SDP2'.
+Generating RTLIL representation for module `\RAM16SDP4'.
+Generating RTLIL representation for module `\SP'.
+Generating RTLIL representation for module `\SPX9'.
+Generating RTLIL representation for module `\SDP'.
+Generating RTLIL representation for module `\SDPX9'.
+Generating RTLIL representation for module `\DP'.
+Generating RTLIL representation for module `\DPX9'.
+Generating RTLIL representation for module `\rPLL'.
+Generating RTLIL representation for module `\PLLVR'.
+Generating RTLIL representation for module `\OSC'.
+Generating RTLIL representation for module `\OSCZ'.
+Generating RTLIL representation for module `\OSCF'.
+Generating RTLIL representation for module `\OSCH'.
+Successfully finished Verilog frontend.
+
+5.2. Executing HIERARCHY pass (managing design hierarchy).
+
+5.2.1. Analyzing design hierarchy..
+Top module:  \transmitter_top
+Used module:     \bin_to_7seg
+Used module:     \error_generator
+Used module:     \hamming74_enc
+
+5.2.2. Analyzing design hierarchy..
+Top module:  \transmitter_top
+Used module:     \bin_to_7seg
+Used module:     \error_generator
+Used module:     \hamming74_enc
+Removed 0 unused modules.
+
+5.3. Executing PROC pass (convert processes to netlists).
+
+5.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\ALU.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:661$337'.
+Cleaned up 1 empty switch.
+
+5.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333 in module DFFNCE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:515$331 in module DFFNC.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329 in module DFFNPE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:476$327 in module DFFNP.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:457$325 in module DFFNRE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:437$323 in module DFFNR.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:418$321 in module DFFNSE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:398$319 in module DFFNS.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313 in module DFFCE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:328$311 in module DFFC.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309 in module DFFPE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:289$307 in module DFFP.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:270$305 in module DFFRE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:250$303 in module DFFR.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:231$301 in module DFFSE.
+Marked 1 switch rules as full_case in process $proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:211$299 in module DFFS.
+Removed a total of 0 dead cases.
+
+5.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 8 redundant assignments.
+Promoted 26 assignments to connections.
+
+5.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$334'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$332'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$330'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$328'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$326'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$324'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$322'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$320'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$318'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$316'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$314'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$312'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$310'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$308'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$306'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$304'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$302'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$300'.
+  Set init value: \Q = 1'1
+Found init rule in `\DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$298'.
+  Set init value: \Q = 1'0
+Found init rule in `\DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$296'.
+  Set init value: \Q = 1'0
+
+5.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \CLEAR in `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333'.
+Found async reset \CLEAR in `\DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:515$331'.
+Found async reset \PRESET in `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329'.
+Found async reset \PRESET in `\DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:476$327'.
+Found async reset \CLEAR in `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313'.
+Found async reset \CLEAR in `\DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:328$311'.
+Found async reset \PRESET in `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309'.
+Found async reset \PRESET in `\DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:289$307'.
+
+5.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~18 debug messages>
+
+5.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\ALU.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:661$337'.
+Creating decoders for process `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$334'.
+Creating decoders for process `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$332'.
+Creating decoders for process `\DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:515$331'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$330'.
+Creating decoders for process `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$328'.
+Creating decoders for process `\DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:476$327'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$326'.
+Creating decoders for process `\DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:457$325'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$324'.
+Creating decoders for process `\DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:437$323'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$322'.
+Creating decoders for process `\DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:418$321'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$320'.
+Creating decoders for process `\DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:398$319'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$318'.
+Creating decoders for process `\DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:381$317'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$316'.
+Creating decoders for process `\DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:366$315'.
+Creating decoders for process `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$314'.
+Creating decoders for process `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$312'.
+Creating decoders for process `\DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:328$311'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$310'.
+Creating decoders for process `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$308'.
+Creating decoders for process `\DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:289$307'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$306'.
+Creating decoders for process `\DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:270$305'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$304'.
+Creating decoders for process `\DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:250$303'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$302'.
+Creating decoders for process `\DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:231$301'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$300'.
+Creating decoders for process `\DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:211$299'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$298'.
+Creating decoders for process `\DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:194$297'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$296'.
+Creating decoders for process `\DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:179$295'.
+
+5.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\ALU.\C' using process `\ALU.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:661$337'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\ALU.\S' using process `\ALU.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:661$337'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DFFNCE.\Q' using process `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333'.
+  created $adff cell `$procdff$425' with negative edge clock and positive level reset.
+Creating register for signal `\DFFNC.\Q' using process `\DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:515$331'.
+  created $adff cell `$procdff$426' with negative edge clock and positive level reset.
+Creating register for signal `\DFFNPE.\Q' using process `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329'.
+  created $adff cell `$procdff$427' with negative edge clock and positive level reset.
+Creating register for signal `\DFFNP.\Q' using process `\DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:476$327'.
+  created $adff cell `$procdff$428' with negative edge clock and positive level reset.
+Creating register for signal `\DFFNRE.\Q' using process `\DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:457$325'.
+  created $dff cell `$procdff$429' with negative edge clock.
+Creating register for signal `\DFFNR.\Q' using process `\DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:437$323'.
+  created $dff cell `$procdff$430' with negative edge clock.
+Creating register for signal `\DFFNSE.\Q' using process `\DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:418$321'.
+  created $dff cell `$procdff$431' with negative edge clock.
+Creating register for signal `\DFFNS.\Q' using process `\DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:398$319'.
+  created $dff cell `$procdff$432' with negative edge clock.
+Creating register for signal `\DFFNE.\Q' using process `\DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:381$317'.
+  created $dff cell `$procdff$433' with negative edge clock.
+Creating register for signal `\DFFN.\Q' using process `\DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:366$315'.
+  created $dff cell `$procdff$434' with negative edge clock.
+Creating register for signal `\DFFCE.\Q' using process `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313'.
+  created $adff cell `$procdff$435' with positive edge clock and positive level reset.
+Creating register for signal `\DFFC.\Q' using process `\DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:328$311'.
+  created $adff cell `$procdff$436' with positive edge clock and positive level reset.
+Creating register for signal `\DFFPE.\Q' using process `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309'.
+  created $adff cell `$procdff$437' with positive edge clock and positive level reset.
+Creating register for signal `\DFFP.\Q' using process `\DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:289$307'.
+  created $adff cell `$procdff$438' with positive edge clock and positive level reset.
+Creating register for signal `\DFFRE.\Q' using process `\DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:270$305'.
+  created $dff cell `$procdff$439' with positive edge clock.
+Creating register for signal `\DFFR.\Q' using process `\DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:250$303'.
+  created $dff cell `$procdff$440' with positive edge clock.
+Creating register for signal `\DFFSE.\Q' using process `\DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:231$301'.
+  created $dff cell `$procdff$441' with positive edge clock.
+Creating register for signal `\DFFS.\Q' using process `\DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:211$299'.
+  created $dff cell `$procdff$442' with positive edge clock.
+Creating register for signal `\DFFE.\Q' using process `\DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:194$297'.
+  created $dff cell `$procdff$443' with positive edge clock.
+Creating register for signal `\DFF.\Q' using process `\DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:179$295'.
+  created $dff cell `$procdff$444' with positive edge clock.
+
+5.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `ALU.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:661$337'.
+Removing empty process `DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$334'.
+Found and cleaned up 1 empty switch in `\DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333'.
+Removing empty process `DFFNCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:535$333'.
+Removing empty process `DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$332'.
+Removing empty process `DFFNC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:515$331'.
+Removing empty process `DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$330'.
+Found and cleaned up 1 empty switch in `\DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329'.
+Removing empty process `DFFNPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:496$329'.
+Removing empty process `DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$328'.
+Removing empty process `DFFNP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:476$327'.
+Removing empty process `DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$326'.
+Found and cleaned up 2 empty switches in `\DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:457$325'.
+Removing empty process `DFFNRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:457$325'.
+Removing empty process `DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$324'.
+Found and cleaned up 1 empty switch in `\DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:437$323'.
+Removing empty process `DFFNR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:437$323'.
+Removing empty process `DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$322'.
+Found and cleaned up 2 empty switches in `\DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:418$321'.
+Removing empty process `DFFNSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:418$321'.
+Removing empty process `DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$320'.
+Found and cleaned up 1 empty switch in `\DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:398$319'.
+Removing empty process `DFFNS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:398$319'.
+Removing empty process `DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$318'.
+Found and cleaned up 1 empty switch in `\DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:381$317'.
+Removing empty process `DFFNE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:381$317'.
+Removing empty process `DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$316'.
+Removing empty process `DFFN.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:366$315'.
+Removing empty process `DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$314'.
+Found and cleaned up 1 empty switch in `\DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313'.
+Removing empty process `DFFCE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:348$313'.
+Removing empty process `DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$312'.
+Removing empty process `DFFC.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:328$311'.
+Removing empty process `DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$310'.
+Found and cleaned up 1 empty switch in `\DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309'.
+Removing empty process `DFFPE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:309$309'.
+Removing empty process `DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$308'.
+Removing empty process `DFFP.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:289$307'.
+Removing empty process `DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$306'.
+Found and cleaned up 2 empty switches in `\DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:270$305'.
+Removing empty process `DFFRE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:270$305'.
+Removing empty process `DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$304'.
+Found and cleaned up 1 empty switch in `\DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:250$303'.
+Removing empty process `DFFR.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:250$303'.
+Removing empty process `DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$302'.
+Found and cleaned up 2 empty switches in `\DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:231$301'.
+Removing empty process `DFFSE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:231$301'.
+Removing empty process `DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$300'.
+Found and cleaned up 1 empty switch in `\DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:211$299'.
+Removing empty process `DFFS.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:211$299'.
+Removing empty process `DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$298'.
+Found and cleaned up 1 empty switch in `\DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:194$297'.
+Removing empty process `DFFE.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:194$297'.
+Removing empty process `DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:0$296'.
+Removing empty process `DFF.$proc$C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_sim.v:179$295'.
+Cleaned up 18 empty switches.
+
+5.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+Optimizing module hamming74_enc.
+Optimizing module error_generator.
+Optimizing module bin_to_7seg.
+
+5.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module hamming74_enc.
+Deleting now unused module error_generator.
+Deleting now unused module bin_to_7seg.
+<suppressed ~3 debug messages>
+
+5.5. Executing TRIBUF pass.
+
+5.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+5.7. Executing SYNTH pass.
+
+5.7.1. Executing PROC pass (convert processes to netlists).
+
+5.7.1.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.7.1.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+5.7.1.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 0 assignments to connections.
+
+5.7.1.4. Executing PROC_INIT pass (extract init attributes).
+
+5.7.1.5. Executing PROC_ARST pass (detect async resets in processes).
+
+5.7.1.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+5.7.1.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+5.7.1.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.7.1.9. Executing PROC_DFF pass (convert process syncs to FFs).
+
+5.7.1.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+5.7.1.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+5.7.1.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+Removed 0 unused cells and 32 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.4. Executing CHECK pass (checking for obvious problems).
+Checking module transmitter_top...
+Found and reported 0 problems.
+
+5.7.5. Executing OPT pass (performing simple optimizations).
+
+5.7.5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+<suppressed ~54 debug messages>
+Removed a total of 18 cells.
+
+5.7.5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \transmitter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.7.5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \transmitter_top.
+Performed a total of 0 changes.
+
+5.7.5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.5.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+Removed 0 unused cells and 18 unused wires.
+<suppressed ~1 debug messages>
+
+5.7.5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.7.5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \transmitter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.7.5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \transmitter_top.
+Performed a total of 0 changes.
+
+5.7.5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.5.16. Finished OPT passes. (There is nothing left to do.)
+
+5.7.6. Executing FSM pass (extract and optimize FSM).
+
+5.7.6.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+5.7.6.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+5.7.6.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.6.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+5.7.6.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+5.7.6.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+5.7.6.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+5.7.7. Executing OPT pass (performing simple optimizations).
+
+5.7.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \transmitter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.7.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \transmitter_top.
+Performed a total of 0 changes.
+
+5.7.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.7.9. Finished OPT passes. (There is nothing left to do.)
+
+5.7.8. Executing WREDUCE pass (reducing word size of cells).
+
+5.7.9. Executing PEEPOPT pass (run peephole optimizers).
+
+5.7.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.11. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module transmitter_top:
+  created 0 $alu and 0 $macc cells.
+
+5.7.12. Executing SHARE pass (SAT-based resource sharing).
+
+5.7.13. Executing OPT pass (performing simple optimizations).
+
+5.7.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \transmitter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.7.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \transmitter_top.
+Performed a total of 0 changes.
+
+5.7.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.7.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.7.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.7.13.9. Finished OPT passes. (There is nothing left to do.)
+
+5.7.14. Executing MEMORY pass.
+
+5.7.14.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+5.7.14.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+5.7.14.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+5.7.14.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+5.7.14.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+5.7.14.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.14.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+5.7.14.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+5.7.14.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.7.14.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+5.7.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.8. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+5.9. Executing TECHMAP pass (map to technology primitives).
+
+5.9.1. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/lutrams_map.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/lutrams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__GOWIN_LUTRAM_'.
+Successfully finished Verilog frontend.
+
+5.9.2. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/brams_map.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__GOWIN_SP_'.
+Generating RTLIL representation for module `\$__GOWIN_DP_'.
+Generating RTLIL representation for module `\$__GOWIN_SDP_'.
+Successfully finished Verilog frontend.
+
+5.9.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~6 debug messages>
+
+5.10. Executing OPT pass (performing simple optimizations).
+
+5.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.10.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.10.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.10.5. Finished fast OPT passes.
+
+5.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+5.12. Executing OPT pass (performing simple optimizations).
+
+5.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \transmitter_top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+5.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \transmitter_top.
+Performed a total of 0 changes.
+
+5.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.12.9. Finished OPT passes. (There is nothing left to do.)
+
+5.13. Executing TECHMAP pass (map to technology primitives).
+
+5.13.1. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/techmap.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+5.13.2. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/arith_map.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_gw1n_alu'.
+Successfully finished Verilog frontend.
+
+5.13.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~166 debug messages>
+
+5.14. Executing OPT pass (performing simple optimizations).
+
+5.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\transmitter_top'.
+Removed a total of 0 cells.
+
+5.14.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+
+5.14.5. Finished fast OPT passes.
+
+5.15. Executing IOPADMAP pass (mapping inputs/outputs to IO-PAD cells).
+Mapping port transmitter_top.i_data0 using IBUF.
+Mapping port transmitter_top.i_data1 using IBUF.
+Mapping port transmitter_top.i_data2 using IBUF.
+Mapping port transmitter_top.i_data3 using IBUF.
+Mapping port transmitter_top.i_pos0 using IBUF.
+Mapping port transmitter_top.i_pos1 using IBUF.
+Mapping port transmitter_top.i_pos2 using IBUF.
+Mapping port transmitter_top.o_parity using OBUF.
+Mapping port transmitter_top.o_seg_a using OBUF.
+Mapping port transmitter_top.o_seg_b using OBUF.
+Mapping port transmitter_top.o_seg_c using OBUF.
+Mapping port transmitter_top.o_seg_d using OBUF.
+Mapping port transmitter_top.o_seg_e using OBUF.
+Mapping port transmitter_top.o_seg_f using OBUF.
+Mapping port transmitter_top.o_seg_g using OBUF.
+Mapping port transmitter_top.o_tx0 using OBUF.
+Mapping port transmitter_top.o_tx1 using OBUF.
+Mapping port transmitter_top.o_tx2 using OBUF.
+Mapping port transmitter_top.o_tx3 using OBUF.
+Mapping port transmitter_top.o_tx4 using OBUF.
+Mapping port transmitter_top.o_tx5 using OBUF.
+Mapping port transmitter_top.o_tx6 using OBUF.
+
+5.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \transmitter_top..
+Removed 0 unused cells and 22 unused wires.
+<suppressed ~1 debug messages>
+
+5.17. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+5.18. Executing TECHMAP pass (map to technology primitives).
+
+5.18.1. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+5.18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~23 debug messages>
+
+5.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module transmitter_top.
+
+5.20. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+5.21. Executing ABC pass (technology mapping using ABC).
+
+5.21.1. Extracting gate netlist of module `\transmitter_top' to `<abc-temp-dir>/input.blif'..
+Extracted 93 gates and 100 wires to a netlist network with 7 inputs and 15 outputs.
+
+5.21.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+5.21.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:       15
+ABC RESULTS:        internal signals:       78
+ABC RESULTS:           input signals:        7
+ABC RESULTS:          output signals:       15
+Removing temp directory.
+Removed 0 unused cells and 109 unused wires.
+
+5.22. Executing TECHMAP pass (map to technology primitives).
+
+5.22.1. Executing Verilog-2005 frontend: C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v
+Parsing Verilog input from `C:\Users\gabri\DOWNLO~1\OSS-CA~1\bin\../share/yosys/gowin/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+5.22.2. Continuing TECHMAP pass.
+Using template $paramod$12876a77a23933587641472d85bdc8e7478ad1c0\$lut for cells of type $lut.
+Using template $paramod$ef6f9494c41321ef63579b1462fd44bdf781fd1c\$lut for cells of type $lut.
+Using template $paramod$54950a3f3469fd7f74132771f3809ee16e9ca6e7\$lut for cells of type $lut.
+Using template $paramod$415b9dd3a15783ae56c103f189fd8e182f997441\$lut for cells of type $lut.
+Using template $paramod$fef0bf11c1cbbc14b71b642bb7315e1d6a9b6cce\$lut for cells of type $lut.
+Using template $paramod$971d9f355db327680e1d04e8596be00cb67fa78c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod$60706ec56213e162b2b50cb37832db0ce0a86ab7\$lut for cells of type $lut.
+Using template $paramod$eb95d6a58038b5eb68f87b4f604db414879e7bb1\$lut for cells of type $lut.
+Using template $paramod$4b4b0d164889d1f0429c06b8785349a50e11c667\$lut for cells of type $lut.
+Using template $paramod$f9333290b738a242cb30b0de8879c5396e3e6451\$lut for cells of type $lut.
+Using template $paramod$8808358f3a8fea8d368ebf950447b5ebb959e962\$lut for cells of type $lut.
+Using template $paramod$adfec3fb84b73b0663a615aadfa0213a347a7cae\$lut for cells of type $lut.
+Using template $paramod$fd2400b0cf03900f6444d3c95306f93da6e46972\$lut for cells of type $lut.
+Using template $paramod$ccf53742422ca114b9ba17c80f3fbc21d0592891\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~251 debug messages>
+
+5.23. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+Optimizing LUTs in transmitter_top.
+
+5.24. Executing SETUNDEF pass (replace undef values with defined constants).
+
+5.25. Executing HILOMAP pass (mapping to constant drivers).
+Removed 1 unused cells and 67 unused wires.
+
+5.26. Executing AUTONAME pass.
+Renamed 133 objects in module transmitter_top (6 iterations).
+<suppressed ~73 debug messages>
+
+5.27. Executing HIERARCHY pass (managing design hierarchy).
+
+5.27.1. Analyzing design hierarchy..
+Top module:  \transmitter_top
+
+5.27.2. Analyzing design hierarchy..
+Top module:  \transmitter_top
+Removed 0 unused modules.
+
+5.28. Printing statistics.
+
+=== transmitter_top ===
+
+   Number of wires:                 79
+   Number of wire bits:             79
+   Number of public wires:          79
+   Number of public wire bits:      79
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 55
+     IBUF                            7
+     LUT3                            1
+     LUT4                           23
+     MUX2_LUT5                       6
+     MUX2_LUT6                       3
+     OBUF                           15
+
+5.29. Executing CHECK pass (checking for obvious problems).
+Checking module transmitter_top...
+Found and reported 0 problems.
+
+5.30. Executing JSON backend.
+
+End of script. Logfile hash: fa1f9d95f9
+Yosys 0.26+1 (git sha1 b1a011138, x86_64-w64-mingw32-g++ 9.2.1 -Os)
+Time spent: 1% 15x opt_expr (0 sec), 1% 14x opt_clean (0 sec), ...

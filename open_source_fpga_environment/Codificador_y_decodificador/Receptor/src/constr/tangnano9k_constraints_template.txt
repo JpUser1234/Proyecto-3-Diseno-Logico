@@ -1,0 +1,66 @@
+// Switches de dato (entradas)
+IO_LOC "i_data0" 28;
+IO_PORT "i_data0" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "i_data1" 27;
+IO_PORT "i_data1" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "i_data2" 26;
+IO_PORT "i_data2" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "i_data3" 25;
+IO_PORT "i_data3" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+// Switches posición de error (entradas)
+IO_LOC "i_pos0" 41;
+IO_PORT "i_pos0" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "i_pos1" 42;
+IO_PORT "i_pos1" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC "i_pos2" 43;
+IO_PORT "i_pos2" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+// Salida hacia receptor (7 bits)
+IO_LOC "o_tx0" 44;
+IO_PORT "o_tx0" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx1" 45;
+IO_PORT "o_tx1" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx2" 46;
+IO_PORT "o_tx2" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx3" 47;
+IO_PORT "o_tx3" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx4" 48;
+IO_PORT "o_tx4" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx5" 49;
+IO_PORT "o_tx5" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_tx6" 76;
+IO_PORT "o_tx6" IO_TYPE=LVCMOS18;
+
+// Display 7 segmentos transmisor
+IO_LOC "o_seg_a" 55;
+IO_PORT "o_seg_a" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_b" 54;
+IO_PORT "o_seg_b" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_c" 53;
+IO_PORT "o_seg_c" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_d" 51;
+IO_PORT "o_seg_d" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_e" 42;
+IO_PORT "o_seg_e" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_f" 30;
+IO_PORT "o_seg_f" IO_TYPE=LVCMOS18;
+
+IO_LOC "o_seg_g" 29;
+IO_PORT "o_seg_g" IO_TYPE=LVCMOS18;

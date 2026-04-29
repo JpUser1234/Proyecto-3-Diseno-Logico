@@ -1,0 +1,65 @@
+IO_LOC  "i_data0" 32;
+IO_PORT "i_data0" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_data1" 31;
+IO_PORT "i_data1" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_data2" 49;
+IO_PORT "i_data2" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_data3" 48;
+IO_PORT "i_data3" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_pos0" 70;
+IO_PORT "i_pos0" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_pos1" 71;
+IO_PORT "i_pos1" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "i_pos2" 72;
+IO_PORT "i_pos2" IO_TYPE=LVCMOS18 PULL_MODE=DOWN;
+
+IO_LOC  "o_tx0" 68;
+IO_PORT "o_tx0" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx1" 57;
+IO_PORT "o_tx1" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx2" 56;
+IO_PORT "o_tx2" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx3" 55;
+IO_PORT "o_tx3" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx4" 54;
+IO_PORT "o_tx4" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx5" 53;
+IO_PORT "o_tx5" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_tx6" 51;
+IO_PORT "o_tx6" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_parity" 38;
+IO_PORT "o_parity" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_a" 73;
+IO_PORT "o_seg_a" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_b" 74;
+IO_PORT "o_seg_b" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_c" 75;
+IO_PORT "o_seg_c" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_d" 76;
+IO_PORT "o_seg_d" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_e" 77;
+IO_PORT "o_seg_e" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_f" 63;
+IO_PORT "o_seg_f" IO_TYPE=LVCMOS18;
+
+IO_LOC  "o_seg_g" 69;
+IO_PORT "o_seg_g" IO_TYPE=LVCMOS18;
