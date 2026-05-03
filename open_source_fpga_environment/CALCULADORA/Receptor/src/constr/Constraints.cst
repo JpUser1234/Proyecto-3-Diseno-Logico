@@ -49,13 +49,13 @@ IO_PORT "seg[0]" DRIVE=8 IO_TYPE=LVCMOS33;
 IO_LOC  "anode[0]" 39;
 IO_PORT "anode[0]" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "anode[1]" 25;
+IO_LOC  "anode[1]" 28;
 IO_PORT "anode[1]" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "anode[2]" 26;
+IO_LOC  "anode[2]" 29;
 IO_PORT "anode[2]" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "anode[3]" 27;
+IO_LOC  "anode[3]" 30;
 IO_PORT "anode[3]" DRIVE=8 IO_TYPE=LVCMOS33;
 
 IO_LOC  "clk" 52;
