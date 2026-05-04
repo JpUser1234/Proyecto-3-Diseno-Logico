@@ -957,7 +957,7 @@ Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$664 ($dff) from module t
 Adding EN signal on $auto$ff.cc:266:slice$828 ($sdff) from module top (D = \deb_rows[0].DEB.DFF2, Q = \deb_rows[0].DEB.DB_out).
 Adding SRST signal on $flatten\SCANNER.$procdff$669 ($dff) from module top (D = $flatten\SCANNER.$add$../design/col_scanner.sv:15$15_Y [14:0], Q = \SCANNER.counter, rval = 15'000000000000000).
 Adding SRST signal on $flatten\SCANNER.$procdff$668 ($dff) from module top (D = $flatten\SCANNER.$procmux$619_Y, Q = \SCANNER.col_scan, rval = 4'0001).
-Adding EN signal on $auto$ff.cc:266:slice$833 ($sdff) from module top (D = { \SCANNER.col_scan [2:0] \SCANNER.col_scan [3] }, Q = \SCANNER.col_scan).
+Adding EN signal on $auto$ff.cc:266:slice$833 ($sdff) from module top (D = { \SCANNER.col_scan [0] \SCANNER.col_scan [3:1] }, Q = \SCANNER.col_scan).
 Adding SRST signal on $flatten\MUX.$procdff$663 ($dff) from module top (D = $flatten\MUX.$procmux$591_Y, Q = \MUX.sel, rval = 2'00).
 Adding EN signal on $auto$ff.cc:266:slice$835 ($sdff) from module top (D = $flatten\MUX.$procmux$589_Y, Q = \MUX.sel).
 Adding SRST signal on $flatten\MUX.$procdff$662 ($dff) from module top (D = $flatten\MUX.$procmux$565_Y, Q = \MUX.digit_out, rval = 4'0000).
@@ -2016,6 +2016,6 @@ Found and reported 0 problems.
 
 9.30. Executing JSON backend.
 
-End of script. Logfile hash: 1025827af5
+End of script. Logfile hash: 4bce0f1dcf
 Yosys 0.26+1 (git sha1 b1a011138, x86_64-w64-mingw32-g++ 9.2.1 -Os)
 Time spent: 1% 21x opt_expr (0 sec), 1% 19x opt_clean (0 sec), ...

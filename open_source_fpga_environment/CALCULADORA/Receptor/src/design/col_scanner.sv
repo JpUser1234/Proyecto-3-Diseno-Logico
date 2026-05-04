@@ -15,7 +15,7 @@ always_ff @(posedge clk) begin
         counter <= counter + 1;
         if (counter == MAX_COUNT-1) begin
             counter  <= 0;
-            col_scan <= {col_scan[2:0], col_scan[3]};
+            col_scan <= {col_scan[0], col_scan[3:1]};
         end
     end
 end
