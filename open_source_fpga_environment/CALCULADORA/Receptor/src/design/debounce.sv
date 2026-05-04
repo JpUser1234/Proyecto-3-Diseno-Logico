@@ -1,5 +1,5 @@
 module debounce #(
-    parameter N = 14  // 2^14 / 27MHz ≈ 0.5ms (más razonable para teclados)
+    parameter N = 10  // 2^10 / 27MHz ≈ 0.04ms (más rápido para teclados)
 )(
     input  wire clk,
     input  wire rst,        // activo en bajo (rst_n)

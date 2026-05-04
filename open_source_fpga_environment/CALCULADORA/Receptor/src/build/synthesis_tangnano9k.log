@@ -343,11 +343,11 @@ Creating decoders for process `\display_mux.$proc$../design/display_mux.sv:16$25
 Creating decoders for process `\debounce.$proc$../design/debounce.sv:40$23'.
      1/1: $0\DB_out[0:0]
 Creating decoders for process `\debounce.$proc$../design/debounce.sv:28$21'.
-     1/3: $0\q_reg[13:0]
+     1/3: $0\q_reg[9:0]
      2/3: $0\DFF2[0:0]
      3/3: $0\DFF1[0:0]
 Creating decoders for process `\debounce.$proc$../design/debounce.sv:0$19'.
-     1/1: $1\q_next[13:0]
+     1/1: $1\q_next[9:0]
 Creating decoders for process `\col_scanner.$proc$../design/col_scanner.sv:10$13'.
      1/2: $0\counter[14:0]
      2/2: $0\col_scan[3:0]
@@ -932,31 +932,31 @@ Removed a total of 0 cells.
 9.7.7.6. Executing OPT_DFF pass (perform DFF optimizations).
 Adding SRST signal on $flatten\deb_rows[3].DEB.$procdff$667 ($dff) from module top (D = \deb_rows[3].DEB.DFF1, Q = \deb_rows[3].DEB.DFF2, rval = 1'0).
 Adding SRST signal on $flatten\deb_rows[3].DEB.$procdff$666 ($dff) from module top (D = \row [3], Q = \deb_rows[3].DEB.DFF1, rval = 1'0).
-Adding SRST signal on $flatten\deb_rows[3].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[3].DEB.q_next, Q = \deb_rows[3].DEB.q_reg, rval = 14'00000000000000).
+Adding SRST signal on $flatten\deb_rows[3].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[3].DEB.q_next, Q = \deb_rows[3].DEB.q_reg, rval = 10'0000000000).
 Adding EN signal on $auto$ff.cc:266:slice$800 ($sdff) from module top (D = \deb_rows[3].DEB.q_next, Q = \deb_rows[3].DEB.q_reg).
 Adding SRST signal on $flatten\deb_rows[3].DEB.$procdff$664 ($dff) from module top (D = $flatten\deb_rows[3].DEB.$procmux$596_Y, Q = \deb_rows[3].DEB.DB_out, rval = 1'0).
 Adding EN signal on $auto$ff.cc:266:slice$804 ($sdff) from module top (D = \deb_rows[3].DEB.DFF2, Q = \deb_rows[3].DEB.DB_out).
 Adding SRST signal on $flatten\deb_rows[2].DEB.$procdff$667 ($dff) from module top (D = \deb_rows[2].DEB.DFF1, Q = \deb_rows[2].DEB.DFF2, rval = 1'0).
 Adding SRST signal on $flatten\deb_rows[2].DEB.$procdff$666 ($dff) from module top (D = \row [2], Q = \deb_rows[2].DEB.DFF1, rval = 1'0).
-Adding SRST signal on $flatten\deb_rows[2].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[2].DEB.q_next, Q = \deb_rows[2].DEB.q_reg, rval = 14'00000000000000).
+Adding SRST signal on $flatten\deb_rows[2].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[2].DEB.q_next, Q = \deb_rows[2].DEB.q_reg, rval = 10'0000000000).
 Adding EN signal on $auto$ff.cc:266:slice$808 ($sdff) from module top (D = \deb_rows[2].DEB.q_next, Q = \deb_rows[2].DEB.q_reg).
 Adding SRST signal on $flatten\deb_rows[2].DEB.$procdff$664 ($dff) from module top (D = $flatten\deb_rows[2].DEB.$procmux$596_Y, Q = \deb_rows[2].DEB.DB_out, rval = 1'0).
 Adding EN signal on $auto$ff.cc:266:slice$812 ($sdff) from module top (D = \deb_rows[2].DEB.DFF2, Q = \deb_rows[2].DEB.DB_out).
 Adding SRST signal on $flatten\deb_rows[1].DEB.$procdff$667 ($dff) from module top (D = \deb_rows[1].DEB.DFF1, Q = \deb_rows[1].DEB.DFF2, rval = 1'0).
 Adding SRST signal on $flatten\deb_rows[1].DEB.$procdff$666 ($dff) from module top (D = \row [1], Q = \deb_rows[1].DEB.DFF1, rval = 1'0).
-Adding SRST signal on $flatten\deb_rows[1].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[1].DEB.q_next, Q = \deb_rows[1].DEB.q_reg, rval = 14'00000000000000).
+Adding SRST signal on $flatten\deb_rows[1].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[1].DEB.q_next, Q = \deb_rows[1].DEB.q_reg, rval = 10'0000000000).
 Adding EN signal on $auto$ff.cc:266:slice$816 ($sdff) from module top (D = \deb_rows[1].DEB.q_next, Q = \deb_rows[1].DEB.q_reg).
 Adding SRST signal on $flatten\deb_rows[1].DEB.$procdff$664 ($dff) from module top (D = $flatten\deb_rows[1].DEB.$procmux$596_Y, Q = \deb_rows[1].DEB.DB_out, rval = 1'0).
 Adding EN signal on $auto$ff.cc:266:slice$820 ($sdff) from module top (D = \deb_rows[1].DEB.DFF2, Q = \deb_rows[1].DEB.DB_out).
 Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$667 ($dff) from module top (D = \deb_rows[0].DEB.DFF1, Q = \deb_rows[0].DEB.DFF2, rval = 1'0).
 Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$666 ($dff) from module top (D = \row [0], Q = \deb_rows[0].DEB.DFF1, rval = 1'0).
-Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[0].DEB.q_next, Q = \deb_rows[0].DEB.q_reg, rval = 14'00000000000000).
+Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$665 ($dff) from module top (D = \deb_rows[0].DEB.q_next, Q = \deb_rows[0].DEB.q_reg, rval = 10'0000000000).
 Adding EN signal on $auto$ff.cc:266:slice$824 ($sdff) from module top (D = \deb_rows[0].DEB.q_next, Q = \deb_rows[0].DEB.q_reg).
 Adding SRST signal on $flatten\deb_rows[0].DEB.$procdff$664 ($dff) from module top (D = $flatten\deb_rows[0].DEB.$procmux$596_Y, Q = \deb_rows[0].DEB.DB_out, rval = 1'0).
 Adding EN signal on $auto$ff.cc:266:slice$828 ($sdff) from module top (D = \deb_rows[0].DEB.DFF2, Q = \deb_rows[0].DEB.DB_out).
 Adding SRST signal on $flatten\SCANNER.$procdff$669 ($dff) from module top (D = $flatten\SCANNER.$add$../design/col_scanner.sv:15$15_Y [14:0], Q = \SCANNER.counter, rval = 15'000000000000000).
 Adding SRST signal on $flatten\SCANNER.$procdff$668 ($dff) from module top (D = $flatten\SCANNER.$procmux$619_Y, Q = \SCANNER.col_scan, rval = 4'0001).
-Adding EN signal on $auto$ff.cc:266:slice$835 ($sdff) from module top (D = { \SCANNER.col_scan [0] \SCANNER.col_scan [3:1] }, Q = \SCANNER.col_scan).
+Adding EN signal on $auto$ff.cc:266:slice$835 ($sdff) from module top (D = { \SCANNER.col_scan [2:0] \SCANNER.col_scan [3] }, Q = \SCANNER.col_scan).
 Adding SRST signal on $flatten\MUX.$procdff$663 ($dff) from module top (D = $flatten\MUX.$procmux$591_Y, Q = \MUX.sel, rval = 2'00).
 Adding EN signal on $auto$ff.cc:266:slice$837 ($sdff) from module top (D = $flatten\MUX.$procmux$589_Y, Q = \MUX.sel).
 Adding SRST signal on $flatten\MUX.$procdff$662 ($dff) from module top (D = $flatten\MUX.$procmux$565_Y, Q = \MUX.digit_out, rval = 4'0000).
@@ -1045,6 +1045,7 @@ Optimizing module top.
 
 9.7.8. Executing WREDUCE pass (reducing word size of cells).
 Removed top 28 address bits (of 32) from memory init port top.$flatten\SEG.$auto$mem.cc:319:emit$340 ($flatten\SEG.$auto$proc_rom.cc:150:do_switch$338).
+Removed top 1 bits (of 15) from port B of cell top.$flatten\SCANNER.$eq$../design/col_scanner.sv:16$16 ($eq).
 Removed top 31 bits (of 32) from port B of cell top.$flatten\SCANNER.$add$../design/col_scanner.sv:15$15 ($add).
 Removed top 17 bits (of 32) from port Y of cell top.$flatten\SCANNER.$add$../design/col_scanner.sv:15$15 ($add).
 Removed top 1 bits (of 4) from port B of cell top.$auto$fsm_map.cc:77:implement_pattern_cache$709 ($eq).
@@ -1084,16 +1085,16 @@ Removed top 31 bits (of 32) from port B of cell top.$flatten\MUX.$add$../design/
 Removed top 30 bits (of 32) from port Y of cell top.$flatten\MUX.$add$../design/display_mux.sv:28$29 ($add).
 Removed top 1 bits (of 2) from port B of cell top.$flatten\deb_rows[0].DEB.$procmux$612_CMP0 ($eq).
 Removed top 31 bits (of 32) from port B of cell top.$flatten\deb_rows[0].DEB.$add$../design/debounce.sv:23$20 ($add).
-Removed top 18 bits (of 32) from port Y of cell top.$flatten\deb_rows[0].DEB.$add$../design/debounce.sv:23$20 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\deb_rows[0].DEB.$add$../design/debounce.sv:23$20 ($add).
 Removed top 1 bits (of 2) from port B of cell top.$flatten\deb_rows[1].DEB.$procmux$612_CMP0 ($eq).
 Removed top 31 bits (of 32) from port B of cell top.$flatten\deb_rows[1].DEB.$add$../design/debounce.sv:23$20 ($add).
-Removed top 18 bits (of 32) from port Y of cell top.$flatten\deb_rows[1].DEB.$add$../design/debounce.sv:23$20 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\deb_rows[1].DEB.$add$../design/debounce.sv:23$20 ($add).
 Removed top 1 bits (of 2) from port B of cell top.$flatten\deb_rows[2].DEB.$procmux$612_CMP0 ($eq).
 Removed top 31 bits (of 32) from port B of cell top.$flatten\deb_rows[2].DEB.$add$../design/debounce.sv:23$20 ($add).
-Removed top 18 bits (of 32) from port Y of cell top.$flatten\deb_rows[2].DEB.$add$../design/debounce.sv:23$20 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\deb_rows[2].DEB.$add$../design/debounce.sv:23$20 ($add).
 Removed top 1 bits (of 2) from port B of cell top.$flatten\deb_rows[3].DEB.$procmux$612_CMP0 ($eq).
 Removed top 31 bits (of 32) from port B of cell top.$flatten\deb_rows[3].DEB.$add$../design/debounce.sv:23$20 ($add).
-Removed top 18 bits (of 32) from port Y of cell top.$flatten\deb_rows[3].DEB.$add$../design/debounce.sv:23$20 ($add).
+Removed top 22 bits (of 32) from port Y of cell top.$flatten\deb_rows[3].DEB.$add$../design/debounce.sv:23$20 ($add).
 Removed top 3 bits (of 14) from wire top.$flatten\ADDER.$add$../design/adder.sv:25$11_Y.
 Removed top 2 bits (of 10) from wire top.$flatten\ADDER.$mul$../design/adder.sv:14$2_Y.
 Removed top 2 bits (of 10) from wire top.$flatten\ADDER.$mul$../design/adder.sv:18$6_Y.
@@ -1101,10 +1102,10 @@ Removed top 30 bits (of 32) from wire top.$flatten\MUX.$add$../design/display_mu
 Removed top 26 bits (of 32) from wire top.$flatten\MUX.$add$../design/display_mux.sv:30$30_Y.
 Removed top 2 bits (of 4) from wire top.$flatten\MUX.$procmux$565_Y.
 Removed top 17 bits (of 32) from wire top.$flatten\SCANNER.$add$../design/col_scanner.sv:15$15_Y.
-Removed top 18 bits (of 32) from wire top.$flatten\deb_rows[0].DEB.$add$../design/debounce.sv:23$20_Y.
-Removed top 18 bits (of 32) from wire top.$flatten\deb_rows[1].DEB.$add$../design/debounce.sv:23$20_Y.
-Removed top 18 bits (of 32) from wire top.$flatten\deb_rows[2].DEB.$add$../design/debounce.sv:23$20_Y.
-Removed top 18 bits (of 32) from wire top.$flatten\deb_rows[3].DEB.$add$../design/debounce.sv:23$20_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\deb_rows[0].DEB.$add$../design/debounce.sv:23$20_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\deb_rows[1].DEB.$add$../design/debounce.sv:23$20_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\deb_rows[2].DEB.$add$../design/debounce.sv:23$20_Y.
+Removed top 22 bits (of 32) from wire top.$flatten\deb_rows[3].DEB.$add$../design/debounce.sv:23$20_Y.
 Removed top 2 bits (of 12) from wire top.num2.
 
 9.7.9. Executing PEEPOPT pass (run peephole optimizers).
@@ -1462,7 +1463,7 @@ Using extmapper simplemap for cells of type $mux.
 Using extmapper simplemap for cells of type $not.
 Using extmapper simplemap for cells of type $sdffe.
 Using extmapper simplemap for cells of type $eq.
-Using template $paramod$713617589782cfade849bb573b5c36106c4b708f\_80_gw1n_alu for cells of type $alu.
+Using template $paramod$754650b284649a026620fc6856e5b6886cbfe794\_80_gw1n_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $and.
 Using extmapper simplemap for cells of type $dff.
 Using extmapper simplemap for cells of type $ne.
@@ -1502,24 +1503,24 @@ Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001010 for cel
 Using template $paramod$484d51534650924b7ed4c69e46eed3a56904771f\_80_gw1n_alu for cells of type $alu.
 Using extmapper simplemap for cells of type $or.
 No more expansions possible.
-<suppressed ~949 debug messages>
+<suppressed ~933 debug messages>
 
 9.14. Executing OPT pass (performing simple optimizations).
 
 9.14.1. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
-<suppressed ~1155 debug messages>
+<suppressed ~1091 debug messages>
 
 9.14.2. Executing OPT_MERGE pass (detect identical cells).
 Finding identical cells in module `\top'.
-<suppressed ~510 debug messages>
-Removed a total of 170 cells.
+<suppressed ~507 debug messages>
+Removed a total of 169 cells.
 
 9.14.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 9.14.4. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \top..
-Removed 51 unused cells and 884 unused wires.
+Removed 51 unused cells and 869 unused wires.
 <suppressed ~52 debug messages>
 
 9.14.5. Finished fast OPT passes.
@@ -1573,7 +1574,7 @@ Using template \$_DFF_P_ for cells of type $_DFF_P_.
 Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
 Using template \$_SDFF_PP1_ for cells of type $_SDFF_PP1_.
 No more expansions possible.
-<suppressed ~192 debug messages>
+<suppressed ~176 debug messages>
 
 9.19. Executing OPT_EXPR pass (perform const folding).
 Optimizing module top.
@@ -1584,7 +1585,7 @@ Optimizing module top.
 9.21. Executing ABC pass (technology mapping using ABC).
 
 9.21.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
-Extracted 695 gates and 882 wires to a netlist network with 185 inputs and 294 outputs.
+Extracted 662 gates and 833 wires to a netlist network with 169 inputs and 262 outputs.
 
 9.21.1.1. Executing ABC.
 Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
@@ -1607,12 +1608,12 @@ ABC: + mfs2
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 9.21.1.2. Re-integrating ABC results.
-ABC RESULTS:              $lut cells:      332
-ABC RESULTS:        internal signals:      403
-ABC RESULTS:           input signals:      185
-ABC RESULTS:          output signals:      294
+ABC RESULTS:              $lut cells:      322
+ABC RESULTS:        internal signals:      402
+ABC RESULTS:           input signals:      169
+ABC RESULTS:          output signals:      262
 Removing temp directory.
-Removed 0 unused cells and 1645 unused wires.
+Removed 0 unused cells and 1498 unused wires.
 
 9.22. Executing TECHMAP pass (map to technology primitives).
 
@@ -1642,318 +1643,259 @@ Generating RTLIL representation for module `\$lut'.
 Successfully finished Verilog frontend.
 
 9.22.2. Continuing TECHMAP pass.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
-Using template $paramod$8c0906b2839cf5b45bd0ae12a6705f4d2be93c5e\$lut for cells of type $lut.
-Using template $paramod$59c595af41d4a5cce2d588c3a5f1342749ce7a77\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod$9a830a35b5c71d89eb3fef3e17f2ee77ca7ce883\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110101 for cells of type $lut.
+Using template $paramod$41326ad8644342a66dfb051d050f2b6fbf15015b\$lut for cells of type $lut.
+Using template $paramod$0a94662b0161fc067fc2a1123fd5ac94da2ec1db\$lut for cells of type $lut.
+Using template $paramod$372d09fb1704f74cb92ca5d8a46125011a5208b4\$lut for cells of type $lut.
+Using template $paramod$c36a4cefa52d69db845e12ab4601e823c4ff4690\$lut for cells of type $lut.
+Using template $paramod$9ab494594f178f1b2722725c1a755ee5c002129c\$lut for cells of type $lut.
+Using template $paramod$6d23198eb2b8f79a41c7626605a61009695893b1\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod$3ed8010b34ad9b4e1bbe4309311b2a01fe421616\$lut for cells of type $lut.
+Using template $paramod$7a988de7554d6c5e09a742c0a2d36472e50c73b1\$lut for cells of type $lut.
+Using template $paramod$fef24df6a11793c7e8b07daa67daa3ba046da49d\$lut for cells of type $lut.
+Using template $paramod$baa939b0bd5b3e0c8760492528669bd58f640542\$lut for cells of type $lut.
+Using template $paramod$85c59004fd258163f2b82629c8fde573c607afa7\$lut for cells of type $lut.
+Using template $paramod$7303763c7e9100a3ee91ac77a658e9a3e1ad30aa\$lut for cells of type $lut.
+Using template $paramod$59c595af41d4a5cce2d588c3a5f1342749ce7a77\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101000 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
 Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
 Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
 Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
-Using template $paramod$a5ded677954e76fda74c033bc6b944a75f39996a\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
-Using template $paramod$500f553b44e18e787815e9ce7688e0dcdaabd846\$lut for cells of type $lut.
-Using template $paramod$25a3f19ecfe3bf4d5e453e5a646f01847a605ef4\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
 Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
 Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101111 for cells of type $lut.
-Using template $paramod$c5f3c57a6d466a2f42208bafb8985b96ce884440\$lut for cells of type $lut.
-Using template $paramod$fa934b7c855d1e0553ad0664cccadf4f1fcfb496\$lut for cells of type $lut.
-Using template $paramod$3a3f251470f24496d495428c6bb307b393087f7d\$lut for cells of type $lut.
+Using template $paramod$51307cdec77060d17363ea3d60427c9afef1ddc2\$lut for cells of type $lut.
 Using template $paramod$1bf62ab10e48d71d6497bccacf5c70420c470fe9\$lut for cells of type $lut.
-Using template $paramod$8adf7fbd410d2cc654c288d5be5f7508ee8809b0\$lut for cells of type $lut.
-Using template $paramod$49af33aa6aa19b94c8fdc46f549df37fbca7f5e7\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
-Using template $paramod$a7dad16c080c08c1647c7e1b9706a59a123d8bcd\$lut for cells of type $lut.
+Using template $paramod$8b5cfd51a136f15086c81819c3ac4e80128b684d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
 Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
-Using template $paramod$b68ced860a8bceb8bba3e481ffe74d75921cecbd\$lut for cells of type $lut.
-Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
-Using template $paramod$0a94662b0161fc067fc2a1123fd5ac94da2ec1db\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110101 for cells of type $lut.
-Using template $paramod$41326ad8644342a66dfb051d050f2b6fbf15015b\$lut for cells of type $lut.
-Using template $paramod$fef24df6a11793c7e8b07daa67daa3ba046da49d\$lut for cells of type $lut.
-Using template $paramod$372d09fb1704f74cb92ca5d8a46125011a5208b4\$lut for cells of type $lut.
-Using template $paramod$7a988de7554d6c5e09a742c0a2d36472e50c73b1\$lut for cells of type $lut.
-Using template $paramod$9ab494594f178f1b2722725c1a755ee5c002129c\$lut for cells of type $lut.
-Using template $paramod$baa939b0bd5b3e0c8760492528669bd58f640542\$lut for cells of type $lut.
-Using template $paramod$6d23198eb2b8f79a41c7626605a61009695893b1\$lut for cells of type $lut.
-Using template $paramod$c36a4cefa52d69db845e12ab4601e823c4ff4690\$lut for cells of type $lut.
-Using template $paramod$3ed8010b34ad9b4e1bbe4309311b2a01fe421616\$lut for cells of type $lut.
-Using template $paramod$9a830a35b5c71d89eb3fef3e17f2ee77ca7ce883\$lut for cells of type $lut.
-Using template $paramod$5aa24fa6529c0fe54ab39e68ffeaf4dd2b9896f5\$lut for cells of type $lut.
+Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101111 for cells of type $lut.
 Using template $paramod$f8841aaedaa1d40a5d4400eaa8d65bccac0b5c8a\$lut for cells of type $lut.
+Using template $paramod$a7dad16c080c08c1647c7e1b9706a59a123d8bcd\$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$7ec0775f4c3b4033492bd5e09d7acd86c621844f\$lut for cells of type $lut.
+Using template $paramod$fc24c71b99865a32158914ff2ac6cdcf1b6a0cff\$lut for cells of type $lut.
+Using template $paramod$6dd40481e042d92deb7689c30105c7f37fa84bba\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100000 for cells of type $lut.
+Using template $paramod$8c9f2751040ced2aabeb0631d7986ae5c360824d\$lut for cells of type $lut.
+Using template $paramod$76ebe1cd006d3c10b3bc01174f6f7a392df3a8e0\$lut for cells of type $lut.
+Using template $paramod$2d7162d552332296010d4876725a24ad2e9888a7\$lut for cells of type $lut.
+Using template $paramod$d23b7fa44105cf52de1534be91d3cd1f74d6e18f\$lut for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod$3a3bf9b84eac6e7ed9799391a5a9d5489447ca84\$lut for cells of type $lut.
+Using template $paramod$c5f3c57a6d466a2f42208bafb8985b96ce884440\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod$973818279bc95792902f3c09371fd2407d04a2a5\$lut for cells of type $lut.
+Using template $paramod$947a0ff339db3fe75c6d1878336a8d85bac63af3\$lut for cells of type $lut.
+Using template $paramod$5e865b1c0bab72b878902f564f2fb0186d926043\$lut for cells of type $lut.
 Using template $paramod$1ca8baa1535b575b65ccab93efce6b4bdeb96bbf\$lut for cells of type $lut.
-Using template $paramod$1361a92e662955a6d8cf2257a0d4d374ed57f5ed\$lut for cells of type $lut.
-Using template $paramod$fc80ea956478f02e93f5413bc09beb136181c9c3\$lut for cells of type $lut.
 Using template $paramod$246390ef91d47d45ee7bea1f72e25838644ea5e2\$lut for cells of type $lut.
 Using template $paramod$0984a7c5c8284b4cb7b52e5f5f798fda360213e4\$lut for cells of type $lut.
-Using template $paramod$7305ec642808e641747f6398fb4adef2a8ef560d\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101111 for cells of type $lut.
-Using template $paramod$3bd90dfefd2a93c12855dbf6fa4153076794a6ca\$lut for cells of type $lut.
-Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110100 for cells of type $lut.
-Using template $paramod$1402c50955da22eb5438bd0311167e72bc2e5165\$lut for cells of type $lut.
-Using template $paramod$85c59004fd258163f2b82629c8fde573c607afa7\$lut for cells of type $lut.
-Using template $paramod$7303763c7e9100a3ee91ac77a658e9a3e1ad30aa\$lut for cells of type $lut.
-Using template $paramod$8461a38da2644081983cd5b082d7f6c55a8dc5b7\$lut for cells of type $lut.
-Using template $paramod$9664483609d9e726df9697364de1aad825ad3979\$lut for cells of type $lut.
-Using template $paramod$bf0d0292861bdee659ef5cbc5e58b330ac5871f9\$lut for cells of type $lut.
+Using template $paramod$e0ff11b6ec8797da4acd6ec39e67fe1c0ecf4336\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod$d35161d1d7976dcc02e7c7d51172431be85143b4\$lut for cells of type $lut.
+Using template $paramod$fc80ea956478f02e93f5413bc09beb136181c9c3\$lut for cells of type $lut.
+Using template $paramod$5aa24fa6529c0fe54ab39e68ffeaf4dd2b9896f5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
 Using template $paramod$61bc98ece8c76bffd4acdf40e5f231340cba90fc\$lut for cells of type $lut.
-Using template $paramod$96d84cafb29a2199fe4730c7924c085950c2c496\$lut for cells of type $lut.
-Using template $paramod$4020e3df297aae24c53c5d47009aa2628fc5ab6e\$lut for cells of type $lut.
-Using template $paramod$dadff75c617cf87bb5b8cfe47ca6c69fb6925370\$lut for cells of type $lut.
-Using template $paramod$75f6de3d7885c7619dd2439927bd22998c66b11d\$lut for cells of type $lut.
-Using template $paramod$f70a097e8a06bcba38e9a37775cefd14f9640270\$lut for cells of type $lut.
-Using template $paramod$dd034cef61519403fb9ec5aaf8997136b942411a\$lut for cells of type $lut.
-Using template $paramod$7279b42005ef379a86869193b81f5679c014eff5\$lut for cells of type $lut.
-Using template $paramod$c5ef9b1f33c12cd66cbeec97951894bc27229f5e\$lut for cells of type $lut.
-Using template $paramod$82a48e5f5771a531ca9edba4cc6af5165f5035d5\$lut for cells of type $lut.
-Using template $paramod$6e0863487da5a76a0aab985933d62f88309f0538\$lut for cells of type $lut.
-Using template $paramod$2acc56796dae1e7bbd8d34441a24f749523f3d30\$lut for cells of type $lut.
-Using template $paramod$4b6d71ecc8170bfacf38b3b71c1a9b261b163b05\$lut for cells of type $lut.
+Using template $paramod$24cabd1a3b9abad6dddcc51137182966301b50e2\$lut for cells of type $lut.
+Using template $paramod$55c953dee116d39832c63ab921c6b1b3eeaa0367\$lut for cells of type $lut.
+Using template $paramod$86c3d45faf78c83fe65e2e1f5354cc2f704582d4\$lut for cells of type $lut.
+Using template $paramod$9664483609d9e726df9697364de1aad825ad3979\$lut for cells of type $lut.
 Using template $paramod$55812447ef2404a31d3493531be265e20f7cda0f\$lut for cells of type $lut.
-Using template $paramod$98ea2a50a3ce5cc32ae7342411658e8dd20deb67\$lut for cells of type $lut.
-Using template $paramod$c07e58ee8e598273ba4a4c39b0756dbef8fd3cc6\$lut for cells of type $lut.
-Using template $paramod$4f346c53015206d89e6ccd42460ed0270fa82b3a\$lut for cells of type $lut.
-Using template $paramod$abb62e0bb773897e599cd3816fae202471d68d58\$lut for cells of type $lut.
-Using template $paramod$b7999cccf07e64a426eff857b5a6c42b7ee00b07\$lut for cells of type $lut.
-Using template $paramod$853eff2d9669477fb0ebfe4be528fd006b202562\$lut for cells of type $lut.
-Using template $paramod$3a1dbf2a10490397ae5ad5c9fd1742aee33f66c9\$lut for cells of type $lut.
-Using template $paramod$fcf60f898920c3c97cc6a6ce04cd751b8bbbc908\$lut for cells of type $lut.
-Using template $paramod$14672a0c0bf57d504a958d6cd17a29203ebe7ad1\$lut for cells of type $lut.
-Using template $paramod$02b0ab33c1cd062ac0fe69e6e63a2e8a42b860ad\$lut for cells of type $lut.
-Using template $paramod$fbca3d03d6e3688966eb4324b5180a0baf106942\$lut for cells of type $lut.
-Using template $paramod$c5d145767d3156bb1219fe51060f367aab5a8fcd\$lut for cells of type $lut.
-Using template $paramod$f8dc3c2129ea40d7ab16d347bb97b36f3877181b\$lut for cells of type $lut.
-Using template $paramod$eaf4b8f32c38bdf4e3f100ef3ecf845c517ab107\$lut for cells of type $lut.
-Using template $paramod$b87e68186b90bb4c5cfee06b505a39a3e0efe0a9\$lut for cells of type $lut.
+Using template $paramod$2acc56796dae1e7bbd8d34441a24f749523f3d30\$lut for cells of type $lut.
+Using template $paramod$6e0863487da5a76a0aab985933d62f88309f0538\$lut for cells of type $lut.
+Using template $paramod$8461a38da2644081983cd5b082d7f6c55a8dc5b7\$lut for cells of type $lut.
+Using template $paramod$4b6d71ecc8170bfacf38b3b71c1a9b261b163b05\$lut for cells of type $lut.
 Using template $paramod$79332405731e8d3f040aaeaa03377babebaa21a9\$lut for cells of type $lut.
+Using template $paramod$8f6a9c8609135e00d07ce34ac604417db265606b\$lut for cells of type $lut.
+Using template $paramod$fb488bd9804018afcabe46c76f4cf4172153cf51\$lut for cells of type $lut.
+Using template $paramod$fe2ccc9771c7f3621af3392ea69c0322e13310d4\$lut for cells of type $lut.
+Using template $paramod$bf0d0292861bdee659ef5cbc5e58b330ac5871f9\$lut for cells of type $lut.
+Using template $paramod$626707b1a4b9e7bd2355faaa37fa9ff185e19277\$lut for cells of type $lut.
+Using template $paramod$d02e35924427a3fa94afe696cf57269373bcee73\$lut for cells of type $lut.
+Using template $paramod$62ef97f842587d3ec516d3a5fca9898e40c4ad26\$lut for cells of type $lut.
+Using template $paramod$b69af17c2f1411f93fb3ad2fdfb12f411f487f93\$lut for cells of type $lut.
+Using template $paramod$4020e3df297aae24c53c5d47009aa2628fc5ab6e\$lut for cells of type $lut.
+Using template $paramod$b87e68186b90bb4c5cfee06b505a39a3e0efe0a9\$lut for cells of type $lut.
+Using template $paramod$fbca3d03d6e3688966eb4324b5180a0baf106942\$lut for cells of type $lut.
+Using template $paramod$14672a0c0bf57d504a958d6cd17a29203ebe7ad1\$lut for cells of type $lut.
+Using template $paramod$e9785980784d28d70dd562c44b435a2f65f779a1\$lut for cells of type $lut.
+Using template $paramod$853eff2d9669477fb0ebfe4be528fd006b202562\$lut for cells of type $lut.
+Using template $paramod$02b0ab33c1cd062ac0fe69e6e63a2e8a42b860ad\$lut for cells of type $lut.
 Using template $paramod$70bdadd4a87bef59ea897569ed22d65ddd3f51f1\$lut for cells of type $lut.
+Using template $paramod$7a304f4cc33557f2483dc5919be108a1249ae1f1\$lut for cells of type $lut.
 Using template $paramod$7de2d7b90131dc2acdf4446ab4e5f63ad5676bea\$lut for cells of type $lut.
 Using template $paramod$f65a96d258e839e93cb1cc57a48870bada2e2319\$lut for cells of type $lut.
-Using template $paramod$fe4dcf644cd74fc260a624636e437f9d605314b9\$lut for cells of type $lut.
-Using template $paramod$d4df93f5f4a55ea841567cad4984d3017821bec1\$lut for cells of type $lut.
-Using template $paramod$d61456bc8c9d06ce41c4c32d7ae0cd23fd2738da\$lut for cells of type $lut.
-Using template $paramod$50fa1bf14ba2d1c0d57980abf117a1cd1be36b6d\$lut for cells of type $lut.
-Using template $paramod$8225d540ea465007aed0a99b27bbf0bacbf90c30\$lut for cells of type $lut.
-Using template $paramod$ce292f2a64661266fb19f1ba6455e607baee44ff\$lut for cells of type $lut.
-Using template $paramod$40bfcf074ade2e7f2cce6a68c78b267e44d04b0a\$lut for cells of type $lut.
-Using template $paramod$7a304f4cc33557f2483dc5919be108a1249ae1f1\$lut for cells of type $lut.
-Using template $paramod$9a147f4902d494779aa87cb0dc98ced8f5da77ff\$lut for cells of type $lut.
-Using template $paramod$692927e279b3d5c42ee4aacb287247c0b34943ed\$lut for cells of type $lut.
-Using template $paramod$e5d6017fb33df26f616cd71b8ab2799e0c0e9c4a\$lut for cells of type $lut.
-Using template $paramod$d51d7d9b3ebe36ff7c006a09b8392bfbbeb7771e\$lut for cells of type $lut.
-Using template $paramod$3536bbd0bd91d10d8a3a68256d0a5f8c92ce0213\$lut for cells of type $lut.
-Using template $paramod$c315fd171a22ad0b563d890e3adda172ea240769\$lut for cells of type $lut.
-Using template $paramod$f18569300906f69e82b2370c26117cb7ad311fbd\$lut for cells of type $lut.
-Using template $paramod$3a32a7587b9f95b908af04fb9b75cd3eae00b58e\$lut for cells of type $lut.
-Using template $paramod$a943331e543dc1a353289944833852a8c778ceb7\$lut for cells of type $lut.
-Using template $paramod$a28b3bf9f77ffa09d0318eba8f062998d766ef94\$lut for cells of type $lut.
-Using template $paramod$96ff56ce5a5ee85ee0c4678d1c423b47046ec6af\$lut for cells of type $lut.
-Using template $paramod$f756c6ded821b4a3cf0369498cc51c03818f5cb3\$lut for cells of type $lut.
-Using template $paramod$5e39f2df13ead5f40a240574f5759650aa9d164e\$lut for cells of type $lut.
-Using template $paramod$07bd2983970c965343e2efa8110fedf4bb85645b\$lut for cells of type $lut.
-Using template $paramod$717875898611d0932966296daf19f3d848d1263f\$lut for cells of type $lut.
-Using template $paramod$c39b7a4af38a1b3b6f893f7fc4580c6096005b67\$lut for cells of type $lut.
-Using template $paramod$09a19b20f184da6af8362cd1b32ba29eada4f9c3\$lut for cells of type $lut.
-Using template $paramod$a8f0b66d6442d140b08ba5dde7bccc974236df60\$lut for cells of type $lut.
-Using template $paramod$49754ece12f5603141b8fabfef6a971c55ecaf9a\$lut for cells of type $lut.
+Using template $paramod$4f346c53015206d89e6ccd42460ed0270fa82b3a\$lut for cells of type $lut.
+Using template $paramod$3a1dbf2a10490397ae5ad5c9fd1742aee33f66c9\$lut for cells of type $lut.
+Using template $paramod$c07e58ee8e598273ba4a4c39b0756dbef8fd3cc6\$lut for cells of type $lut.
+Using template $paramod$75f6de3d7885c7619dd2439927bd22998c66b11d\$lut for cells of type $lut.
+Using template $paramod$abb62e0bb773897e599cd3816fae202471d68d58\$lut for cells of type $lut.
+Using template $paramod$b7999cccf07e64a426eff857b5a6c42b7ee00b07\$lut for cells of type $lut.
+Using template $paramod$30e89ecdd5d1a297d6b81fbcffd97228755446f7\$lut for cells of type $lut.
+Using template $paramod$d2b1256096a8b59e088a2876bfce4e33e7833f43\$lut for cells of type $lut.
 Using template $paramod$b810ab371cf5d0ac75c804bf4d6ded1b4c8ea732\$lut for cells of type $lut.
-Using template $paramod$4a7c9aa8c0f23beb934748a80716d3b537d734b4\$lut for cells of type $lut.
-Using template $paramod$14e709efb0b8ec8fc5ebb79019eb1a16f9dd54a1\$lut for cells of type $lut.
-Using template $paramod$7aeb6df89551de27ad7cb5f45b3fac8c875569f1\$lut for cells of type $lut.
+Using template $paramod$93c8052cc2aeb365f3d41b716e46085b0f9a599d\$lut for cells of type $lut.
+Using template $paramod$07bd2983970c965343e2efa8110fedf4bb85645b\$lut for cells of type $lut.
+Using template $paramod$5e39f2df13ead5f40a240574f5759650aa9d164e\$lut for cells of type $lut.
+Using template $paramod$3536bbd0bd91d10d8a3a68256d0a5f8c92ce0213\$lut for cells of type $lut.
+Using template $paramod$a8f0b66d6442d140b08ba5dde7bccc974236df60\$lut for cells of type $lut.
+Using template $paramod$1410c2fbaf86c649d4b5a05f137a271bfd14f896\$lut for cells of type $lut.
+Using template $paramod$662aa0a39b9e25110115bde1c02f46570201d4f7\$lut for cells of type $lut.
+Using template $paramod$4f3d4d938d5236fea2bf7065d2781f8ab2263d98\$lut for cells of type $lut.
+Using template $paramod$36199984556944b8bb66e8bea04e89b9557b561e\$lut for cells of type $lut.
+Using template $paramod$4ed0e67b1cc8eeb6e14c517ad680995c3944955d\$lut for cells of type $lut.
+Using template $paramod$dadff75c617cf87bb5b8cfe47ca6c69fb6925370\$lut for cells of type $lut.
+Using template $paramod$873bbf757be8c69a984482f27d0e95febe568328\$lut for cells of type $lut.
+Using template $paramod$f18569300906f69e82b2370c26117cb7ad311fbd\$lut for cells of type $lut.
+Using template $paramod$717875898611d0932966296daf19f3d848d1263f\$lut for cells of type $lut.
+Using template $paramod$09a19b20f184da6af8362cd1b32ba29eada4f9c3\$lut for cells of type $lut.
+Using template $paramod$f756c6ded821b4a3cf0369498cc51c03818f5cb3\$lut for cells of type $lut.
 Using template $paramod$73baa2833534e74cb98ca96b995d2dfaa6d416ad\$lut for cells of type $lut.
-Using template $paramod$fe2ccc9771c7f3621af3392ea69c0322e13310d4\$lut for cells of type $lut.
-Using template $paramod$9ad22ab226d5f8e5400f54634ba607010349b2b2\$lut for cells of type $lut.
-Using template $paramod$8beb3ab363664d4dc75ac42c8140f616b77a719d\$lut for cells of type $lut.
-Using template $paramod$64dbda253a177cc920f804291b85dd84c70b8bb2\$lut for cells of type $lut.
+Using template $paramod$96ff56ce5a5ee85ee0c4678d1c423b47046ec6af\$lut for cells of type $lut.
+Using template $paramod$70e64bec46a2b927251f00177746f6318b0a2989\$lut for cells of type $lut.
 Using template $paramod$ed647fb13d298a1776a5f62ba3576a326ff46dd9\$lut for cells of type $lut.
-Using template $paramod$f2408cb03485bac785ad44d1df874a69f179b100\$lut for cells of type $lut.
 Using template $paramod$a8886d6b449daded290cdb3b853243f84f3dc998\$lut for cells of type $lut.
-Using template $paramod$d46ff40a53892a10d887e4314e39b159d95bdff8\$lut for cells of type $lut.
-Using template $paramod$0b3fff13e5b8f15d3a52feb6d38d54cd45a4f0e8\$lut for cells of type $lut.
-Using template $paramod$d2c61f1b84a1ef8fddee3374171e7c92c058a743\$lut for cells of type $lut.
-Using template $paramod$28d03c30566c52c086643dcc8dd623663c10e996\$lut for cells of type $lut.
 Using template $paramod$3876752fe05a58cc67510456f8d1170e7cf64033\$lut for cells of type $lut.
-Using template $paramod$bfc6e9cbe3c9c007686f9a45ac8e0fc13fcd085f\$lut for cells of type $lut.
-Using template $paramod$cc32a05866f608aca38637d6c7ba9e5d077e8484\$lut for cells of type $lut.
-Using template $paramod$9d861e2811f834c08408a61217fcdd364bd89396\$lut for cells of type $lut.
-Using template $paramod$81a8f822ac4e520a543c5b78457927233d9b2f34\$lut for cells of type $lut.
-Using template $paramod$2935a885c21b768c66d916f07ec5063a4e4d7d6b\$lut for cells of type $lut.
 Using template $paramod$04ae10f7d848c17f6abdd4c00ba30939b2cb4eb5\$lut for cells of type $lut.
-Using template $paramod$798a8e63257059fe018d82d18c6a6bf0ecb8316e\$lut for cells of type $lut.
-Using template $paramod$b7d89ff8a4a0b177297b64caaef5e9850902bcd6\$lut for cells of type $lut.
-Using template $paramod$0fad3dfca4378cf7ba4b707ac0de8527c4f9f48a\$lut for cells of type $lut.
-Using template $paramod$7125b224d5920c893c2dd3de98a266451c2ebe7d\$lut for cells of type $lut.
+Using template $paramod$cc32a05866f608aca38637d6c7ba9e5d077e8484\$lut for cells of type $lut.
+Using template $paramod$9ad22ab226d5f8e5400f54634ba607010349b2b2\$lut for cells of type $lut.
+Using template $paramod$bfc6e9cbe3c9c007686f9a45ac8e0fc13fcd085f\$lut for cells of type $lut.
+Using template $paramod$f2408cb03485bac785ad44d1df874a69f179b100\$lut for cells of type $lut.
+Using template $paramod$8e0e9e752c134f16da9f643e047ab62e21abdb57\$lut for cells of type $lut.
+Using template $paramod$eac7ee502612457d62e471974b70426d3c28f7fd\$lut for cells of type $lut.
+Using template $paramod$3a32a7587b9f95b908af04fb9b75cd3eae00b58e\$lut for cells of type $lut.
+Using template $paramod$eec073e4100fcc9ee30d88e28cceef65b29914e5\$lut for cells of type $lut.
+Using template $paramod$f8b78edebe141757c98ca451eef5028046e48d02\$lut for cells of type $lut.
+Using template $paramod$538720bd9d91773acb8624d1c28c60d69bb7aea5\$lut for cells of type $lut.
+Using template $paramod$82a48e5f5771a531ca9edba4cc6af5165f5035d5\$lut for cells of type $lut.
 Using template $paramod$e4e96a5dece796d779288739da28d0f9a19e7c8a\$lut for cells of type $lut.
-Using template $paramod$734cb5d7d83659ae4da13abb9e04fafa8dc19119\$lut for cells of type $lut.
 Using template $paramod$843f494e2a9308d7cb1a725c8865c6de0fc2cd36\$lut for cells of type $lut.
-Using template $paramod$abb1f47a5a161a7e9ea18c56b1202972543880af\$lut for cells of type $lut.
-Using template $paramod$dd85f40cf1dcb8d8ff074f212acf832e9a11094e\$lut for cells of type $lut.
-Using template $paramod$c0670f2aab73eea2cd5c91d3b03ce85be7de1148\$lut for cells of type $lut.
-Using template $paramod$200e31f0ac942690ab7af383b557604f1e795eee\$lut for cells of type $lut.
-Using template $paramod$ef7f1e65df746b0baa248bc34b422614333608b7\$lut for cells of type $lut.
-Using template $paramod$891f2b0997e16b311b9e4d1e19256bc07cc9939a\$lut for cells of type $lut.
-Using template $paramod$7b567ce82c6f190160db4dde47fa49ab7a624f9e\$lut for cells of type $lut.
-Using template $paramod$99b7d9c95865d7fd46c584123525842190563b50\$lut for cells of type $lut.
-Using template $paramod$bd165429f7e37d02e245bd2ec8f9b3cfff008ec5\$lut for cells of type $lut.
+Using template $paramod$7125b224d5920c893c2dd3de98a266451c2ebe7d\$lut for cells of type $lut.
+Using template $paramod$8f6bec787a3337fac89493b032dcc42ab6787b76\$lut for cells of type $lut.
+Using template $paramod$734cb5d7d83659ae4da13abb9e04fafa8dc19119\$lut for cells of type $lut.
+Using template $paramod$5a10aa2105c09b2d20d94e03186b1c05b67b746f\$lut for cells of type $lut.
 No more expansions possible.
-<suppressed ~2786 debug messages>
+<suppressed ~2447 debug messages>
 
 9.23. Executing OPT_LUT_INS pass (discard unused LUT inputs).
 Optimizing LUTs in top.
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4514.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4514.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4471.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4507.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4499.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4470.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4498.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4479.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4514.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4481.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4496.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4519.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4521.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4516.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4506.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4479.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4472.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4475.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4475.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4475.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4500.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4518.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4523.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4509.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4510.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4595.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4493.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4507.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4515.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4479.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4593.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4594.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4486.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4508.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
-  Optimizing lut $abc$4453$auto$blifparse.cc:525:parse_blif$4596.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4388.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4361.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4409.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4361.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4472.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4404.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4401.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4368.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4361.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4409.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4472.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4369.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4416.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4350.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4411.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4472.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4479.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4475.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4393.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 3)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4394.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4480.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4402.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 3)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4402.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4409.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4410.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4403.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4414.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4413.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4388.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4418.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 1)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4405.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4395.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4333$auto$blifparse.cc:525:parse_blif$4388.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
 
 9.24. Executing SETUNDEF pass (replace undef values with defined constants).
 
 9.25. Executing HILOMAP pass (mapping to constant drivers).
-Removed 0 unused cells and 1311 unused wires.
+Removed 0 unused cells and 1089 unused wires.
 
 9.26. Executing AUTONAME pass.
-Renamed 22892 objects in module top (58 iterations).
-<suppressed ~1537 debug messages>
+Renamed 19261 objects in module top (60 iterations).
+<suppressed ~1271 debug messages>
 
 9.27. Executing HIERARCHY pass (managing design hierarchy).
 
@@ -1968,30 +1910,30 @@ Removed 0 unused modules.
 
 === top ===
 
-   Number of wires:                635
-   Number of wire bits:           1560
-   Number of public wires:         635
-   Number of public wire bits:    1560
+   Number of wires:                519
+   Number of wire bits:           1384
+   Number of public wires:         519
+   Number of public wire bits:    1384
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                987
-     ALU                           151
+   Number of cells:                837
+     ALU                           135
      DFF                            15
      DFFR                           43
-     DFFRE                         109
+     DFFRE                          93
      DFFS                            1
      DFFSE                           1
      GND                             1
      IBUF                            6
-     LUT1                          250
-     LUT2                           68
-     LUT3                           40
-     LUT4                          130
-     MUX2_LUT5                      93
-     MUX2_LUT6                      38
-     MUX2_LUT7                      17
-     MUX2_LUT8                       8
+     LUT1                          192
+     LUT2                           73
+     LUT3                           45
+     LUT4                          114
+     MUX2_LUT5                      64
+     MUX2_LUT6                      24
+     MUX2_LUT7                      10
+     MUX2_LUT8                       4
      OBUF                           15
      VCC                             1
 
@@ -2001,6 +1943,6 @@ Found and reported 0 problems.
 
 9.30. Executing JSON backend.
 
-End of script. Logfile hash: 1802bf8d62
+End of script. Logfile hash: 638cfa6f5b
 Yosys 0.26+1 (git sha1 b1a011138, x86_64-w64-mingw32-g++ 9.2.1 -Os)
 Time spent: 1% 21x opt_expr (0 sec), 1% 19x opt_clean (0 sec), ...

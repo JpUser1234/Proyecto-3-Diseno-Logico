@@ -30,20 +30,20 @@ always_ff @(posedge clk) begin
             key_valid <= 1;
             case ({row, col_latched})
                 8'b0001_0001: key_value <= 4'd1;
-                8'b0001_0010: key_value <= 4'd2;
-                8'b0001_0100: key_value <= 4'd3;
-                8'b0001_1000: key_value <= 4'd10;
-                8'b0010_0001: key_value <= 4'd4;
+                8'b0001_0010: key_value <= 4'd4;
+                8'b0001_0100: key_value <= 4'd7;
+                8'b0001_1000: key_value <= 4'd14;
+                8'b0010_0001: key_value <= 4'd2;
                 8'b0010_0010: key_value <= 4'd5;
-                8'b0010_0100: key_value <= 4'd6;
-                8'b0010_1000: key_value <= 4'd11;
-                8'b0100_0001: key_value <= 4'd7;
-                8'b0100_0010: key_value <= 4'd8;
+                8'b0010_0100: key_value <= 4'd8;
+                8'b0010_1000: key_value <= 4'd0;
+                8'b0100_0001: key_value <= 4'd3;
+                8'b0100_0010: key_value <= 4'd6;
                 8'b0100_0100: key_value <= 4'd9;
-                8'b0100_1000: key_value <= 4'd12;
-                8'b1000_0001: key_value <= 4'd14;
-                8'b1000_0010: key_value <= 4'd0;
-                8'b1000_0100: key_value <= 4'd13;
+                8'b0100_1000: key_value <= 4'd13;
+                8'b1000_0001: key_value <= 4'd10;
+                8'b1000_0010: key_value <= 4'd11;
+                8'b1000_0100: key_value <= 4'd12;
                 8'b1000_1000: key_value <= 4'd15;
                 default: begin
                     key_value <= 4'hF;
