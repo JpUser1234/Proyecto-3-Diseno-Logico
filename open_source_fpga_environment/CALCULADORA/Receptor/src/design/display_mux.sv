@@ -10,10 +10,11 @@ module display_mux (
 );
 
 localparam MAX_COUNT = 27_000;
+
 reg [14:0] counter;
 reg [1:0]  sel;
 
-always_ff @(posedge clk) begin
+always @(posedge clk or negedge rst) begin
     if (!rst) begin
         counter   <= 0;
         sel       <= 0;
@@ -22,10 +23,7 @@ always_ff @(posedge clk) begin
     end else begin
         if (counter == MAX_COUNT - 1) begin
             counter <= 0;
-            if (sel == 2'd3)
-                sel <= 0;
-            else
-                sel <= sel + 1;
+            sel <= sel + 1;
         end else begin
             counter <= counter + 1;
         end
