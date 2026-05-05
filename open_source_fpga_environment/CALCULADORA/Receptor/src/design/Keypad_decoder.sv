@@ -12,7 +12,7 @@ reg [3:0] row_prev;
 reg       was_valid;
 
 always_ff @(posedge clk) begin
-    if (rst) begin
+    if (!rst) begin
         col_latched <= 0;
         row_prev    <= 0;
         key_valid   <= 0;

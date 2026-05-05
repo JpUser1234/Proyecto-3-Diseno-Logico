@@ -19,7 +19,7 @@ assign num2_bin = (num2[11:8] * 10'd100) +
                    num2[3:0];
 
 always_ff @(posedge clk) begin
-    if (rst)
+    if (!rst)        // reset activo en bajo
         result <= 0;
     else if (do_sum)
         result <= num1_bin + num2_bin;

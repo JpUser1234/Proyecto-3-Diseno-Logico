@@ -6,8 +6,7 @@ module input_fsm (
     output reg  [11:0] num1,
     output reg  [11:0] num2,
     output reg         do_sum,
-    output reg  [1:0]  display_sel,
-    output reg  [11:0] entry_value
+    output reg  [1:0]  display_sel
 );
 
 localparam KEY_A    = 4'd10;  // SUMA
@@ -25,11 +24,10 @@ typedef enum logic [1:0] {
 } state_t;
 
 state_t state, next_state;
-reg [1:0] entry_count;
 
 // ===== ESTADO =====
 always_ff @(posedge clk) begin
-    if (rst)
+    if (!rst)
         state <= ESPERA;
     else
         state <= next_state;
@@ -70,13 +68,11 @@ end
 
 // ===== DATOS =====
 always_ff @(posedge clk) begin
-    if (rst) begin
+    if (!rst) begin
         num1 <= 0;
         num2 <= 0;
         do_sum <= 0;
         display_sel <= 0;
-        entry_value <= 0;
-        entry_count <= 0;
     end else begin
         do_sum <= 0;
 
@@ -88,34 +84,22 @@ always_ff @(posedge clk) begin
                     case (state)
                         ESPERA, INGRESO_NUM1: begin
                             display_sel <= 0;
-                            if (entry_count < 2'd3) begin
-                                entry_value <= {entry_value[7:0], key_value};
-                                entry_count <= entry_count + 1;
-                            end
+                            num1 <= {num1[7:0], key_value};
                         end
                         INGRESO_NUM2: begin
                             display_sel <= 1;
-                            if (entry_count < 2'd3) begin
-                                entry_value <= {entry_value[7:0], key_value};
-                                entry_count <= entry_count + 1;
-                            end
+                            num2 <= {num2[7:0], key_value};
                         end
                     endcase
                 end
 
                 // ===== # PASAR A NUM2 =====
                 KEY_HASH: begin
-                    num1 <= entry_value;
-                    entry_value <= 0;
-                    entry_count <= 0;
                     display_sel <= 1;
                 end
 
                 // ===== A SUMAR =====
                 KEY_A: begin
-                    num2 <= entry_value;
-                    entry_value <= 0;
-                    entry_count <= 0;
                     do_sum <= 1;
                     display_sel <= 2;
                 end
@@ -124,8 +108,6 @@ always_ff @(posedge clk) begin
                 KEY_STAR: begin
                     num1 <= 0;
                     num2 <= 0;
-                    entry_value <= 0;
-                    entry_count <= 0;
                     display_sel <= 0;
                 end
 

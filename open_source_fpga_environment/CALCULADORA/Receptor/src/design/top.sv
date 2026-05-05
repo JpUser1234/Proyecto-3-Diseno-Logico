@@ -18,7 +18,6 @@ wire key_valid;
 wire [11:0] num1, num2;
 wire do_sum;
 wire [1:0] display_sel;
-wire [11:0] entry_value;
 wire [13:0] result;
 
 wire [3:0] digit_mux;
@@ -27,7 +26,12 @@ wire [3:0] d0, d1, d2, d3;
 genvar i;
 generate
     for (i = 0; i < 4; i++) begin : deb_rows
-        debounce DEB (clk, rst_n, row[i], row_clean[i]);
+        debounce DEB (
+            .clk(clk),
+            .rst(rst_n),
+            .button_in(row[i]),
+            .DB_out(row_clean[i])
+        );
     end
 endgenerate
 
@@ -56,8 +60,7 @@ input_fsm FSM (
     .num1(num1),
     .num2(num2),
     .do_sum(do_sum),
-    .display_sel(display_sel),
-    .entry_value(entry_value)
+    .display_sel(display_sel)
 );
 
 adder ADDER (
@@ -72,8 +75,8 @@ adder ADDER (
 wire [13:0] display_data;
 
 assign display_data =
-    (display_sel == 2'd0) ? {2'd0, entry_value} :
-    (display_sel == 2'd1) ? {2'd0, entry_value} :
+    (display_sel == 2'd0) ? {2'd0, num1} :
+    (display_sel == 2'd1) ? {2'd0, num2} :
     result;
 
 assign d0 = display_data[3:0];
