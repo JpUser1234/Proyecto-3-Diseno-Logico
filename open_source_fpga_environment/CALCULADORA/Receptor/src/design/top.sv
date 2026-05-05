@@ -58,45 +58,16 @@ adder ADDER (
     .result(result)
 );
 
-wire [15:0] display_data;
-assign display_data =
-    (display_sel == 2'd0) ? {4'b0000, num1[11:8], num1[7:4], num1[3:0]} :
-    (display_sel == 2'd1) ? {4'b0000, num2[11:8], num2[7:4], num2[3:0]} :
-                            {result[13:12], result[11:8], result[7:4], result[3:0]};
-reg [3:0] d0, d1, d2, d3;
+wire [13:0] display_data;
+assign display_data = (display_sel == 2'd0) ? {2'd0, num1}  :
+                      (display_sel == 2'd1) ? {2'd0, num2}  :
+                                               result;
 
-always @(*) begin
-    case (display_sel)
+assign d0 = display_data[3:0];
+assign d1 = display_data[7:4];
+assign d2 = display_data[11:8];
+assign d3 = display_data[13:12];
 
-        // MOSTRAR num1 (3 dígitos)
-        2'd0: begin
-            d0 = num1[3:0];     // unidades
-            d1 = num1[7:4];     // decenas
-            d2 = num1[11:8];    // centenas
-            d3 = 4'd0;          // apagado
-        end
-
-        // MOSTRAR num2 (3 dígitos)
-        2'd1: begin
-            d0 = num2[3:0];
-            d1 = num2[7:4];
-            d2 = num2[11:8];
-            d3 = 4'd0;
-        end
-
-        // MOSTRAR RESULTADO (hasta 4 dígitos)
-        2'd2: begin
-            d0 = result % 10;
-            d1 = (result / 10) % 10;
-            d2 = (result / 100) % 10;
-            d3 = (result / 1000) % 10;
-        end
-
-        default: begin
-            d0 = 0; d1 = 0; d2 = 0; d3 = 0;
-        end
-    endcase
-end
 display_mux MUX (
     .clk(clk), .rst(rst_n),
     .digit0(d0), .digit1(d1), .digit2(d2), .digit3(d3),
