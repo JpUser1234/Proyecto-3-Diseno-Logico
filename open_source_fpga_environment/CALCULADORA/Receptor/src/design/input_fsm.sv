@@ -1,4 +1,4 @@
-module input_fsm (
+module input_fsm ( 
     input  wire        clk,
     input  wire        rst,
     input  wire        key_valid,
@@ -9,89 +9,111 @@ module input_fsm (
     output reg  [1:0]  display_sel
 );
 
-localparam ESPERA        = 2'd0;
-localparam INGRESO_NUM1  = 2'd1;
-localparam INGRESO_NUM2  = 2'd2;
-localparam SUMA          = 2'd3;
+localparam KEY_A    = 4'd10;  // SUMA
+localparam KEY_B    = 4'd11;
+localparam KEY_C    = 4'd12;
+localparam KEY_HASH = 4'd13;  // pasar a num2
+localparam KEY_STAR = 4'd14;  // limpiar
+localparam KEY_D    = 4'd15;
 
-localparam KEY_HASH = 4'd13;
-localparam KEY_A    = 4'd10;
-localparam KEY_STAR = 4'd14;
+typedef enum logic [1:0] {
+    ESPERA,
+    INGRESO_NUM1,
+    INGRESO_NUM2,
+    SUMA
+} state_t;
 
-reg [1:0] state, next_state;
+state_t state, next_state;
 
-// ===== Estado =====
-always @(posedge clk or negedge rst) begin
+// ===== ESTADO =====
+always_ff @(posedge clk) begin
     if (!rst)
         state <= ESPERA;
     else
         state <= next_state;
 end
 
-// ===== Transiciones =====
-always @(*) begin
+// ===== TRANSICIONES =====
+always_comb begin
     next_state = state;
 
-    case (state)
-        ESPERA:
-            if (key_valid && key_value <= 9)
-                next_state = INGRESO_NUM1;
+    if (key_valid) begin
+        case (state)
 
-        INGRESO_NUM1:
-            if (key_valid && key_value == KEY_HASH)
-                next_state = INGRESO_NUM2;
+            ESPERA:
+                case (key_value)
+                    4'd0,4'd1,4'd2,4'd3,4'd4,4'd5,4'd6,4'd7,4'd8,4'd9:
+                        next_state = INGRESO_NUM1;
+                endcase
 
-        INGRESO_NUM2:
-            if (key_valid && key_value == KEY_A)
-                next_state = SUMA;
+            INGRESO_NUM1:
+                case (key_value)
+                    KEY_HASH: next_state = INGRESO_NUM2;
+                    KEY_STAR: next_state = ESPERA;
+                endcase
 
-        SUMA:
-            if (key_valid && key_value == KEY_STAR)
-                next_state = ESPERA;
-    endcase
+            INGRESO_NUM2:
+                case (key_value)
+                    KEY_A:    next_state = SUMA;
+                    KEY_STAR: next_state = ESPERA;
+                endcase
+
+            SUMA:
+                if (key_value == KEY_STAR)
+                    next_state = ESPERA;
+
+        endcase
+    end
 end
 
-// ===== Lógica BCD =====
-always @(posedge clk or negedge rst) begin
+// ===== DATOS =====
+always_ff @(posedge clk) begin
     if (!rst) begin
-        num1 <= 12'h000;
-        num2 <= 12'h000;
+        num1 <= 0;
+        num2 <= 0;
         do_sum <= 0;
         display_sel <= 0;
     end else begin
         do_sum <= 0;
 
-        case (state)
+        if (key_valid) begin
+            case (key_value)
 
-            ESPERA: begin
-                display_sel <= 0;
-                num1 <= 12'h000;
-                num2 <= 12'h000;
+                // ===== NÚMEROS =====
+                4'd0,4'd1,4'd2,4'd3,4'd4,4'd5,4'd6,4'd7,4'd8,4'd9: begin
+                    case (state)
+                        ESPERA, INGRESO_NUM1: begin
+                            display_sel <= 0;
+                            num1 <= {num1[7:0], key_value};
+                        end
+                        INGRESO_NUM2: begin
+                            display_sel <= 1;
+                            num2 <= {num2[7:0], key_value};
+                        end
+                    endcase
+                end
 
-                if (key_valid && key_value <= 9)
-                    num1 <= {8'h00, key_value};
-            end
+                // ===== # PASAR A NUM2 =====
+                KEY_HASH: begin
+                    display_sel <= 1;
+                end
 
-            INGRESO_NUM1: begin
-                display_sel <= 0;
-                if (key_valid && key_value <= 9)
-                    num1 <= {num1[7:0], key_value};
-            end
-
-            INGRESO_NUM2: begin
-                display_sel <= 1;
-                if (key_valid && key_value <= 9)
-                    num2 <= {num2[7:0], key_value};
-
-                if (next_state == SUMA)
+                // ===== A SUMAR =====
+                KEY_A: begin
                     do_sum <= 1;
-            end
+                    display_sel <= 2;
+                end
 
-            SUMA: begin
-                display_sel <= 2;
-            end
+                // ===== * LIMPIAR =====
+                KEY_STAR: begin
+                    num1 <= 0;
+                    num2 <= 0;
+                    display_sel <= 0;
+                end
 
-        endcase
+                // B, C, D no hacen nada (pero ya no rompen nada)
+            endcase
+        end
     end
 end
 
