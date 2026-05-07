@@ -12,28 +12,36 @@ module display_mux (
 localparam MAX_COUNT = 27_000;
 
 reg [14:0] counter;
-reg [1:0] sel;
+reg [1:0]  sel;
+
+// Lógica combinacional pura para anode y digit
+wire [3:0] next_anode;
+wire [3:0] next_digit;
+
+assign next_anode = (sel == 2'd0) ? 4'b0001 :
+                    (sel == 2'd1) ? 4'b0010 :
+                    (sel == 2'd2) ? 4'b0100 : 4'b1000;
+
+assign next_digit = (sel == 2'd0) ? digit0 :
+                    (sel == 2'd1) ? digit1 :
+                    (sel == 2'd2) ? digit2 : digit3;
 
 always_ff @(posedge clk) begin
     if (!rst) begin
-        counter    <= 0;
-        sel        <= 0;
-        anode      <= 4'b0001;
-        digit_out  <= 4'd0;
+        counter   <= 0;
+        sel       <= 0;
+        anode     <= 4'b0001;
+        digit_out <= 4'd0;
     end else begin
+        anode     <= next_anode;
+        digit_out <= next_digit;
+
         if (counter == MAX_COUNT - 1) begin
             counter <= 0;
             sel <= (sel == 2'd3) ? 0 : sel + 1;
         end else begin
             counter <= counter + 1;
         end
-
-        case (sel)
-            2'd0: begin anode <= 4'b0001; digit_out <= digit0; end
-            2'd1: begin anode <= 4'b0010; digit_out <= digit1; end
-            2'd2: begin anode <= 4'b0100; digit_out <= digit2; end
-            2'd3: begin anode <= 4'b1000; digit_out <= digit3; end
-        endcase
     end
 end
 

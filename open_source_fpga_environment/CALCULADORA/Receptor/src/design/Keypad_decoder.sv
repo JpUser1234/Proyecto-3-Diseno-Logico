@@ -7,59 +7,61 @@ module keypad_decoder (
     output reg key_valid
 );
 
-reg [3:0] row_prev;
-reg key_busy;   // 🔒 LOCK GLOBAL
+// 27MHz * 0.2 segundos = 5,400,000 ciclos de bloqueo
+localparam LOCKOUT = 5_400_000;
+
+reg [22:0] lockout_cnt;
+reg        locked;
+reg [3:0]  row_prev;
 
 always_ff @(posedge clk) begin
     if (!rst) begin
-        row_prev  <= 0;
-        key_valid <= 0;
-        key_value <= 0;
-        key_busy  <= 0;
+        row_prev    <= 0;
+        key_valid   <= 0;
+        key_value   <= 0;
+        locked      <= 0;
+        lockout_cnt <= 0;
     end else begin
-
         key_valid <= 0;
+        row_prev  <= row;
 
-        // ============================
-        // DETECCIÓN DE TECLA NUEVA
-        // ============================
-        if (row != 0 && row_prev == 0 && !key_busy) begin
+        if (locked) begin
+            if (lockout_cnt == LOCKOUT - 1) begin
+                lockout_cnt <= 0;
+                locked      <= 0;
+            end else begin
+                lockout_cnt <= lockout_cnt + 1;
+            end
+        end else begin
+            // Flanco de subida de fila, no bloqueado
+            if (row != 0 && row_prev == 0) begin
+                locked <= 1;
 
-            key_busy  <= 1;     // 🔒 bloquea repetición
-            key_valid <= 1;
+                case ({row, col})
+                    8'b0001_0001: begin key_value <= 4'd1;  key_valid <= 1; end
+                    8'b0001_0010: begin key_value <= 4'd4;  key_valid <= 1; end
+                    8'b0001_0100: begin key_value <= 4'd7;  key_valid <= 1; end
+                    8'b0001_1000: begin key_value <= 4'd14; key_valid <= 1; end
 
-            case ({row, col})
-                8'b0001_0001: key_value <= 4'd1;
-                8'b0001_0010: key_value <= 4'd4;
-                8'b0001_0100: key_value <= 4'd7;
-                8'b0001_1000: key_value <= 4'd14;
+                    8'b0010_0001: begin key_value <= 4'd2;  key_valid <= 1; end
+                    8'b0010_0010: begin key_value <= 4'd5;  key_valid <= 1; end
+                    8'b0010_0100: begin key_value <= 4'd8;  key_valid <= 1; end
+                    8'b0010_1000: begin key_value <= 4'd0;  key_valid <= 1; end
 
-                8'b0010_0001: key_value <= 4'd2;
-                8'b0010_0010: key_value <= 4'd5;
-                8'b0010_0100: key_value <= 4'd8;
-                8'b0010_1000: key_value <= 4'd0;
+                    8'b0100_0001: begin key_value <= 4'd3;  key_valid <= 1; end
+                    8'b0100_0010: begin key_value <= 4'd6;  key_valid <= 1; end
+                    8'b0100_0100: begin key_value <= 4'd9;  key_valid <= 1; end
+                    8'b0100_1000: begin key_value <= 4'd13; key_valid <= 1; end
 
-                8'b0100_0001: key_value <= 4'd3;
-                8'b0100_0010: key_value <= 4'd6;
-                8'b0100_0100: key_value <= 4'd9;
-                8'b0100_1000: key_value <= 4'd13;
+                    8'b1000_0001: begin key_value <= 4'd10; key_valid <= 1; end
+                    8'b1000_0010: begin key_value <= 4'd11; key_valid <= 1; end
+                    8'b1000_0100: begin key_value <= 4'd12; key_valid <= 1; end
+                    8'b1000_1000: begin key_value <= 4'd15; key_valid <= 1; end
 
-                8'b1000_0001: key_value <= 4'd10;
-                8'b1000_0010: key_value <= 4'd11;
-                8'b1000_0100: key_value <= 4'd12;
-                8'b1000_1000: key_value <= 4'd15;
-
-                default: key_valid <= 0;
-            endcase
+                    default: locked <= 0;
+                endcase
+            end
         end
-
-        // ============================
-        // LIBERAR TECLA (CUANDO SUELTAS)
-        // ============================
-        if (row == 0)
-            key_busy <= 0;
-
-        row_prev <= row;
     end
 end
 
