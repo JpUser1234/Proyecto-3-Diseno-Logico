@@ -1,14 +1,14 @@
 #Makefile con todo el flujo de trabajo para GOWIN. Utilizando Yosys, nextpnr, iverilog, gtkwave y openFPGALoader
+# Linux-compatible version
 
 #FPGA a utilizar... Esto no se debe modificar para efectos del curso.
 BOARD  = tangnano9k
 FAMILY = GW1N-9C
 DEVICE = GW1NR-LV9QN88PC6/I5
 
-# Toolchain paths
-OSS_CAD_BIN = C:\Users\gabri\Downloads\oss-cad-suite\bin
-OSS_CAD_LIB = C:\Users\gabri\Downloads\oss-cad-suite\lib
-OSS_CAD_PATH = $(OSS_CAD_LIB);%PATH%
+# Toolchain paths for Linux
+OSS_CAD_BIN = /usr/bin
+OSS_CAD_LIB = /usr/lib
 
 #Nombre del proyecto... Acá ponen el nombre que deseen.
 PROYECT = Seven_seg
@@ -31,7 +31,10 @@ TOP_DESIGN = top
 TOP_TB     = diagnostic_tb
 
 #nombre del vcd que va a generar el tb
-VCD_FILE = top_tb.vcd
+VCD_FILE = ${TOP_TB}.vcd
+
+# Entorno limpio para evitar que el Snap de VS Code inyecte módulos GTK incompatibles
+GTKWAVE_CMD = env -i HOME="$(HOME)" DISPLAY="$(DISPLAY)" XAUTHORITY="$(XAUTHORITY)" PATH=/usr/bin:/bin XDG_DATA_DIRS=/usr/local/share/:/usr/share/ /usr/bin/gtkwave
 
 
 all: synth pnr bitstream load
@@ -39,19 +42,19 @@ all: synth pnr bitstream load
 # Synthesis
 synth: ${SOURCES}
 	@echo "Ejecutando la sintesis..."
-	@set PATH=$(OSS_CAD_PATH) && "$(OSS_CAD_BIN)\yosys.exe" -p "read_verilog -sv ${SOURCES}; synth_gowin -top ${TOP_DESIGN} -json ${PROYECT}.json" > synthesis_${BOARD}.log 2>&1 
+	@yosys -p "read_verilog -sv ${SOURCES}; synth_gowin -top ${TOP_DESIGN} -json ${PROYECT}.json" > synthesis_${BOARD}.log 2>&1 
 	@echo "COMPLETADO"
 
 # Place and Route
 pnr: ${PROYECT}.json
 	@echo "Ejecutando el pnr..."
-	@set PATH=$(OSS_CAD_PATH) && "$(OSS_CAD_BIN)\nextpnr-gowin.exe" --json ${PROYECT}.json --write ${PROYECT}_pnr.json --device ${DEVICE} --family ${FAMILY} --cst ${CONSTRAINTS} > pnr_${BOARD}.log 2>&1 
+	@nextpnr-gowin --json ${PROYECT}.json --write ${PROYECT}_pnr.json --device ${DEVICE} --family ${FAMILY} --cst ${CONSTRAINTS} > pnr_${BOARD}.log 2>&1 
 	@echo "COMPLETADO"
 
 # Generar el Bitstream
 bitstream: ${PROYECT}_pnr.json
 	@echo "Generando ${PROYECT}_${BOARD}.fs"
-	@set PATH=$(OSS_CAD_PATH) && "$(OSS_CAD_BIN)\gowin_pack.exe" -d ${FAMILY} -o ${PROYECT}_${BOARD}.fs ${PROYECT}_pnr.json
+	@gowin_pack -d ${FAMILY} -o ${PROYECT}_${BOARD}.fs ${PROYECT}_pnr.json
 	@echo "COMPLETADO"
 		
 #Generar vcd con icarus verilog
@@ -61,11 +64,11 @@ test: ${SOURCES} ${TESTBENCH}
 	
 #Visualizar los diagramas de tiempo con GTKWave
 wv: ${VCD_FILE}
-	gtkwave ${VCD_FILE} 
+	@$(GTKWAVE_CMD) ${VCD_FILE}
         
 # Cargar el bitstream en la FPGA
 load: ${PROYECT}_${BOARD}.fs
-	@set PATH=$(OSS_CAD_PATH) && "$(OSS_CAD_BIN)\openFPGALoader.exe" -b ${BOARD} ${PROYECT}_${BOARD}.fs 
+	@openFPGALoader -b ${BOARD} ${PROYECT}_${BOARD}.fs 
 
 .PHONY: load  wv
 .INTERMEDIATE: ${PROYECT}_pnr.json ${PROYECT}.json
