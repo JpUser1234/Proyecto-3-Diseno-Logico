@@ -2,6 +2,8 @@
 
 Escuela de Electrónica  
 
+Prueba git
+
 **Proyecto 2**
 
 Diseño lógico
