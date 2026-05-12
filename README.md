@@ -220,23 +220,13 @@ RESUMEN DE DIAGNÓSTICO:
 
 Las siguientes gráficas muestran el comportamiento temporal del sistema:
 
-#### Gráfica 1: Scanner de columnas y filas
-![Espacio reservado para gráfica 1: Col_scan vs row vs row_clean]
+<img src="pic/Sim/Sim1.jpeg" width="600">
+<img src="pic/Sim/Sim2.jpeg" width="600">
+<img src="pic/Sim/Sim3.jpeg" width="600">
+<img src="pic/Sim/Sim4.jpeg" width="600">
+<img src="pic/Sim/Sim5.jpeg" width="600">
+<img src="pic/Sim/Sim6.jpeg" width="600">
 
-#### Gráfica 2: Detección de tecla presionada
-![Espacio reservado para gráfica 2: key_valid y key_value]
-
-#### Gráfica 3: Valores capturados (num1, num2)
-![Espacio reservado para gráfica 3: num1 y num2 en el tiempo]
-
-#### Gráfica 4: Salida del decodificador de 7 segmentos
-![Espacio reservado para gráfica 4: seg (7 bits) durante la simulación]
-
-#### Gráfica 5: Control de multiplexor de ánodos
-![Espacio reservado para gráfica 5: anode (4 bits) en el tiempo]
-
-#### Gráfica 6: Comportamiento integrado del sistema
-![Espacio reservado para gráfica 6: Vista general de todas las señales principais]
 
 ### Conclusión de la simulación
 
@@ -255,6 +245,23 @@ make wv
 # Análisis de consumo de recursos en la FPGA y el consumo de potencia
 
 # Reporte de velocidades maximas de reloj posible en el diseño
+
+El diseño fue desarrollado y probado funcionalmente usando un reloj de referencia de 27 MHz (frecuencia disponible en la placa TangNano 9K). El objetivo de esta sección es describir la metodología para determinar la frecuencia máxima de reloj (f_max) que el diseño puede soportar en la FPGA, identificar los caminos críticos más probables y dejar una tabla de resultados que pueda completarse tras ejecutar la síntesis y el análisis de timing en la herramienta de P&R.
+
+Basado en la arquitectura del proyecto, los caminos críticos que más probablemente limitan la f_max son:
+
+- `Sumador BCD` (operación aritmética): suma por dígitos BCD con lógica de corrección — cadena combinacional que puede involucrar varias etapas de lógica (puede ser el camino crítico si el sumador no está pipelined).
+- `Decodificador BCD -> 7seg` y lógica de multiplexado: rutas combinacionales usadas en el codificador y el multiplexor de salida que selecciona el dígito a mostrar.
+- `Logica de control FSM` combinacional de entrada: en particular la lógica que genera señales síncronas a partir de varios registros y señales de validación.
+
+Otros bloques (debounce, divisores de frecuencia y registros) son principalmente secuenciales y, salvo que contengan lógica combinacional larga, normalmente no limitan la f_max.
+
+- La frecuencia de 27 MHz utilizada en el proyecto es segura para el funcionamiento funcional del sistema y facilita el diseño (divisores, debounce, multiplexado). Para aplicaciones más exigentes en velocidad se puede buscar aumentar la frecuencia, pero es imprescindible basarse en el reporte de timing tras síntesis y P&R para conocer el `f_max` real.
+- Si la síntesis muestra que el `sumador BCD` o la lógica de control son caminos críticos y limitan la f_max por debajo de la frecuencia objetivo deseada, considerar:
+	- Optimizar la lógica combinacional (reestructurar la suma BCD, usar sumadores con menor profundidad lógica, etc.).
+	- Insertar registros (pipeline) para romper caminos largos en varias etapas de reloj.
+	- Revisar restricciones de ruteo y pines en el archivo `Constraints.cst` para ayudar al P&R.
+
 
 # Principales problemas hallados durante el trabajo y soluciones aplicadas
 
