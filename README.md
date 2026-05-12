@@ -280,7 +280,12 @@ make wv
 ```
 
 # Análisis de consumo de recursos en la FPGA y el consumo de potencia
+Análisis de potencia del diseño
+El flujo de herramientas de código abierto empleado Yosys para síntesis lógica y nextpnr para ruteo opera exclusivamente a nivel RTL y mapeo de celdas. Esto implica una limitación concreta: el flujo no dispone de modelos eléctricos del dispositivo físico, por lo que no es posible calcular el consumo de potencia de la misma forma en que lo haría el software propietario de Gowin. En la práctica, parámetros como las capacitancias internas de las LUT, las corrientes de fuga del silicio o los modelos de conmutación de los flip-flops físicos simplemente no están disponibles en este entorno.
 
+Ante esta restricción, el análisis se apoya en los datos que sí entrega el reporte de síntesis: 178 flip-flops, 468 LUT básicas, varias LUT extendidas por multiplexación y 108 bloques aritméticos (ALU). Estos números no son triviales. Un diseño con esta densidad de lógica secuencial —operando a 27 MHz y con múltiples subsistemas activos como el decodificador de teclado, la FSM y el controlador de refresco de displays— presenta una actividad de conmutación considerablemente mayor que la de los proyectos combinacionales anteriores.
+
+La potencia dinámica en circuitos digitales responde a la expresión conocida Pdin ≈ αCV²f, donde el factor de actividad α y la capacitancia efectiva conmutada C dependen directamente de cuántos nodos cambian de estado por ciclo de reloj. Dado el volumen de registros sincronizados y la lógica de decodificación activa, es razonable estimar que α es alto para este diseño. Sin acceso a herramientas de estimación eléctrica, no es posible dar una cifra de consumo, pero sí es posible afirmar con fundamento que el diseño presenta mayor consumo dinámico que versiones previas más simples, y que ese consumo escala principalmente con la cantidad de elementos secuenciales activos y la frecuencia de operación.
 # Reporte de velocidades maximas de reloj posible en el diseño
 
 El diseño fue desarrollado y probado funcionalmente usando un reloj de referencia de 27 MHz (frecuencia disponible en la placa TangNano 9K). El objetivo de esta sección es describir la metodología para determinar la frecuencia máxima de reloj (f_max) que el diseño puede soportar en la FPGA, identificar los caminos críticos más probables y dejar una tabla de resultados que pueda completarse tras ejecutar la síntesis y el análisis de timing en la herramienta de P&R.
