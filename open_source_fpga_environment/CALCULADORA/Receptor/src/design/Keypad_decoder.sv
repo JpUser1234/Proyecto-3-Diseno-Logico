@@ -33,29 +33,29 @@ always_ff @(posedge clk) begin
                 lockout_cnt <= lockout_cnt + 1;
             end
         end else begin
-            // Flanco de subida de fila, no bloqueado
-            if (row != 0 && row_prev == 0) begin
+            // Tecla activa y no bloqueado
+            if (row != 0) begin
                 locked <= 1;
 
                 case ({row, col})
                     8'b0001_0001: begin key_value <= 4'd1;  key_valid <= 1; end
-                    8'b0001_0010: begin key_value <= 4'd4;  key_valid <= 1; end
-                    8'b0001_0100: begin key_value <= 4'd7;  key_valid <= 1; end
-                    8'b0001_1000: begin key_value <= 4'd14; key_valid <= 1; end
+                    8'b0001_0010: begin key_value <= 4'd2;  key_valid <= 1; end
+                    8'b0001_0100: begin key_value <= 4'd3;  key_valid <= 1; end
+                    8'b0001_1000: begin key_value <= 4'd10; key_valid <= 1; end
 
-                    8'b0010_0001: begin key_value <= 4'd2;  key_valid <= 1; end
+                    8'b0010_0001: begin key_value <= 4'd4;  key_valid <= 1; end
                     8'b0010_0010: begin key_value <= 4'd5;  key_valid <= 1; end
-                    8'b0010_0100: begin key_value <= 4'd8;  key_valid <= 1; end
-                    8'b0010_1000: begin key_value <= 4'd0;  key_valid <= 1; end
+                    8'b0010_0100: begin key_value <= 4'd6;  key_valid <= 1; end
+                    8'b0010_1000: begin key_value <= 4'd11; key_valid <= 1; end
 
-                    8'b0100_0001: begin key_value <= 4'd3;  key_valid <= 1; end
-                    8'b0100_0010: begin key_value <= 4'd6;  key_valid <= 1; end
+                    8'b0100_0001: begin key_value <= 4'd7;  key_valid <= 1; end
+                    8'b0100_0010: begin key_value <= 4'd8;  key_valid <= 1; end
                     8'b0100_0100: begin key_value <= 4'd9;  key_valid <= 1; end
-                    8'b0100_1000: begin key_value <= 4'd13; key_valid <= 1; end
+                    8'b0100_1000: begin key_value <= 4'd12; key_valid <= 1; end
 
-                    8'b1000_0001: begin key_value <= 4'd10; key_valid <= 1; end
-                    8'b1000_0010: begin key_value <= 4'd11; key_valid <= 1; end
-                    8'b1000_0100: begin key_value <= 4'd12; key_valid <= 1; end
+                    8'b1000_0001: begin key_value <= 4'd14; key_valid <= 1; end
+                    8'b1000_0010: begin key_value <= 4'd0;  key_valid <= 1; end
+                    8'b1000_0100: begin key_value <= 4'd13; key_valid <= 1; end
                     8'b1000_1000: begin key_value <= 4'd15; key_valid <= 1; end
 
                     default: locked <= 0;
