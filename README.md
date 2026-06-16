@@ -1,58 +1,93 @@
-**Instituto Tecnológico de Costa Rica** 
+**Instituto Tecnológico de Costa Rica**
 
-Escuela de Electrónica  
+Escuela de Electrónica
 
-**Proyecto 2**
+**Proyecto 3**
 
-Diseño lógico
+Diseño Lógico
 
 **Elaborado por**
-  
-Gloriana Carrillo Cabezas 
+
+Gloriana Carrillo Cabezas
 
 Gabriel Chaves Esquivel
 
-Jean Paúl Sequeira Salazar  
+Jean Paúl Sequeira Salazar
 
-# Introduccion
+# Introducción
 
-El presente proyecto corresponde al Proyecto Corto II del curso EL-3307 Diseño Lógico, y consiste en el diseño e implementación de un sistema digital sincrónico completo utilizando SystemVerilog como lenguaje de descripción de hardware (HDL), desplegado sobre una FPGA TangNano 9K. El sistema funciona como una calculadora de suma: permite al usuario ingresar dos números decimales de hasta tres dígitos mediante un teclado hexadecimal mecánico, y muestra tanto los números ingresados como el resultado de su suma en cuatro displays de 7 segmentos. Todo el diseño sigue los principios fundamentales del diseño digital sincrónico, operando con un único reloj de 27 MHz, e incorpora técnicas de sincronización de señales asíncronas y eliminación de rebote mecánico. El desarrollo del proyecto abarcó desde el diseño de cada módulo y su verificación mediante simulaciones RTL, hasta la implementación física en protoboard y la programación de la FPGA.
+El presente proyecto corresponde al Proyecto Corto III del curso EL-3307 Diseño Lógico, y consiste
+en la extensión del sistema digital sincrónico desarrollado en el Proyecto Corto II, ahora con la
+incorporación de una unidad de división entera de números sin signo. El sistema se despliega sobre
+una FPGA TangNano 9K y funciona como una calculadora capaz de realizar tanto sumas como divisiones:
+el usuario selecciona el modo de operación mediante una tecla dedicada, ingresa dos números decimales
+mediante un teclado hexadecimal mecánico, y visualiza los resultados en cuatro displays de 7 segmentos.
+En modo división, el sistema muestra el cociente y el residuo de forma independiente y seleccionable.
+
+El diseño mantiene los principios fundamentales del diseño digital sincrónico del proyecto anterior:
+un único reloj de 27 MHz, sincronización de señales asíncronas y eliminación de rebote mecánico.
+La unidad de división se implementa mediante un algoritmo de división restoring con estructura de
+pipeline de 7 etapas, lo que permite operar a la frecuencia de reloj objetivo sin violar las
+restricciones de temporizado. El sistema soporta dividendos de hasta 7 bits (máximo 127) y divisores
+de hasta 5 bits (máximo 31), correspondiente al puntaje extra del enunciado.
 
 # Problema
 
-Se requiere diseñar un dispositivo capaz de funcionar como una calculadora básica que reciba entradas asincrónicas (teclado mecánico), las procese de forma sincrónica a 27 MHz y visualice la información en hardware externo.  
-
+Se requiere extender el sistema de calculadora desarrollado en el Proyecto Corto II para incorporar
+una unidad de división entera de números sin signo. El sistema debe recibir entradas asincrónicas
+mediante teclado mecánico, procesarlas de forma sincrónica a 27 MHz, calcular tanto la suma como
+la división entera de dos números decimales, y visualizar el cociente y el residuo de la división
+en hardware externo. El usuario debe poder seleccionar entre el modo suma y el modo división, así
+como alternar entre la visualización del cociente y la del residuo.
 
 # Objetivos
 
 ## General
-Introducir al estudiante al desarrollo de un sistema digital sincrónico utilizando lenguajes de descripción
-de hardware.
+Introducir al estudiante a la implementación de algoritmos por medio de máquinas de estados complejas,
+mediante el diseño de una unidad de cálculo de división de enteros integrada a un sistema digital
+sincrónico completo.
 
-## Especificos
-1. Medir mediante un analizador lógico la salida de un dispositivo secuencial sencillo.
-2. Evaluar la funcionalidad de un contador sincrónico integrado.
-3. Diseñar un cerrojo o latch Set-Reset a partir de lógica combinacional integrada.
-4. Evaluar los tiempos de funcionalidad de un flip-flop D integrado.
-5. Elaborar una implementación de un diseño digital sincrónico en una FPGA.
-6. Construir un testbench básico para validar las especificaciones del diseño.
-7. Comprender los conceptos de sincronización de datos asincrónicos.
-8. Implementar un algoritmo de captura de datos de un teclado hexadecimal.
-9. Implementar una sencilla función de suma aritmética en un HDL.
-10. Implementar un algoritmo de despliegue de datos en cuatro dispositivos de 7 segmentos.
-11. Coordinación de trabajo en equipo mediante el uso de herramientas de control de versiones.
-12. Practicar planificación de tareas para trabajo de grupo.
+## Específicos
+1. Elaborar una implementación de un diseño digital en una FPGA.
+2. Construir un testbench básico para validar las especificaciones del diseño.
+3. Implementar un algoritmo de división de enteros con pipeline de 7 etapas en SystemVerilog.
+4. Extender la FSM de control para soportar los modos de suma y división, así como la selección
+   entre cociente y residuo.
+5. Implementar la conversión entre representación BCD y binario para los operandos y resultados
+   de la división.
+6. Coordinación de trabajo en equipo mediante el uso de herramientas de control de versiones.
+7. Practicar planificación de tareas para trabajo de grupo.
 
 # Especificaciones
 
 * Frecuencia de Reloj: 27 MHz.
 * Entrada: Teclado hexadecimal 4x4.
-* Salida: 4 displays de 7 segmentos
-* Capacidad: Dos números positivos de hasta 3 dígitos cada uno (0-999).
+* Salida: 4 displays de 7 segmentos.
+* Modo suma: Dos números positivos de hasta 3 dígitos cada uno (0–999).
+* Modo división: Dividendo de hasta 3 dígitos (0–127) y divisor de hasta 2 dígitos (1–31).
+* Resultado división: Cociente (0–127) y residuo (0–30), seleccionables por teclado.
 
 # Funcionamiento general del circuito
 
-El sistema implementado es una calculadora de suma de dos números decimales de hasta tres dígitos, operando completamente de forma sincrónica con un reloj único de 27 MHz proveniente de la TangNano 9K. El usuario ingresa los números mediante un teclado hexadecimal mecánico, los visualiza en tiempo real en cuatro displays de 7 segmentos mientras los digita, y obtiene el resultado de la suma al confirmar ambas entradas. El circuito se divide en tres subsistemas principales interconectados.
+El sistema implementado es una calculadora de dos modos de operación —suma y división entera—
+que opera completamente de forma sincrónica con un reloj único de 27 MHz proveniente de la
+TangNano 9K. El usuario selecciona el modo activo presionando la tecla B, que alterna entre
+suma y división. En ambos modos, el flujo de ingreso es el mismo: se digitan dos números
+decimales mediante el teclado hexadecimal, separados por la tecla #, y se confirma la operación
+con la tecla A. La tecla * reinicia el sistema desde cualquier estado.
+
+En modo suma, el resultado de la adición se muestra directamente en los cuatro displays al
+confirmar el segundo número. En modo división, el sistema lanza la unidad de división con
+pipeline y, una vez que la señal done se activa (tras 7 ciclos de reloj de latencia), el
+resultado queda disponible. El usuario puede entonces alternar entre ver el cociente (tecla C)
+y el residuo (tecla D) en los displays.
+
+El display más significativo (dígito 3) actúa como indicador de modo: muestra la letra "S"
+cuando el sistema está en modo suma y la letra "d" cuando está en modo división, permitiendo
+al usuario identificar visualmente el modo activo en todo momento.
+
+El circuito se divide en cuatro subsistemas principales interconectados: lectura del teclado,
+cálculo aritmético (suma y división), conversión BCD↔binario, y despliegue en 7 segmentos.
 
 # Diagrama de bloques de subsistemas
 
@@ -81,6 +116,102 @@ Este subsistema recibe los dos números almacenados en BCD y calcula su suma. Lo
 
 <img src="pic/Suma.jpeg" width="600">
 
+## Subsistema de división entera
+
+Este subsistema recibe el dividendo y el divisor ya convertidos a binario desde el módulo superior,
+y calcula el cociente y el residuo mediante el algoritmo de división restoring. La implementación
+utiliza una arquitectura de pipeline de 7 etapas, una por cada bit del dividendo, lo que permite
+recibir una nueva operación cada ciclo de reloj una vez que el pipeline está lleno, con una latencia
+fija de 7 ciclos desde que se activa la señal valid hasta que done se pone en alto.
+
+### Algoritmo de división restoring
+
+El algoritmo opera procesando el dividendo bit a bit, del más significativo al menos significativo.
+En cada etapa se desplaza el residuo parcial un lugar a la izquierda y se concatena el siguiente
+bit del dividendo. Luego se intenta restar el divisor de ese residuo parcial:
+
+* Si el resultado de la resta es negativo (bit de signo en alto), el bit de cociente correspondiente
+  es 0 y el residuo parcial se restaura al valor anterior a la resta.
+* Si el resultado es positivo o cero, el bit de cociente es 1 y el residuo parcial se actualiza
+  con el resultado de la resta.
+
+Al completar las 7 etapas, los 7 bits de cociente generados se concatenan para formar el resultado
+final, y el residuo parcial de la última etapa es el residuo definitivo de la operación.
+
+### Estructura pipeline
+
+Cada etapa del pipeline está separada de la siguiente por registros sincronizados al flanco positivo
+del reloj. Esto corta el camino crítico combinacional que existiría si el divisor fuera puramente
+combinacional, permitiendo operar a 27 MHz sin violaciones de temporizado.
+
+Cada etapa propaga hacia la siguiente los siguientes datos:
+
+* El residuo parcial calculado en esa etapa (6 bits).
+* El divisor original (5 bits), que se propaga sin modificación a lo largo de todas las etapas.
+* Los bits restantes del dividendo aún no procesados.
+* Los bits de cociente ya calculados en etapas anteriores.
+* La señal valid, que se propaga etapa por etapa para indicar que los datos son válidos.
+
+### Entradas y salidas
+
+| Puerto | Bits | Dirección | Descripción |
+|---|---|---|---|
+| clk | 1 | entrada | Reloj del sistema (27 MHz) |
+| rst | 1 | entrada | Reset síncrono activo en bajo |
+| dividend | 7 | entrada | Dividendo en binario (máximo 127) |
+| divisor | 5 | entrada | Divisor en binario (máximo 31) |
+| valid | 1 | entrada | Indica que los operandos son válidos |
+| quotient | 7 | salida | Cociente de la división |
+| remainder | 5 | salida | Residuo de la división |
+| rem_dec | 4 | salida | Dígito de decenas del residuo en BCD |
+| rem_uni | 4 | salida | Dígito de unidades del residuo en BCD |
+| done | 1 | salida | Indica que el resultado es válido |
+
+### Conversión BCD del residuo
+
+Dado que el residuo máximo posible es 30 (divisor máximo 31 menos 1), el módulo incluye
+internamente una tabla case completa que convierte el residuo binario directamente a sus
+dígitos BCD de decenas y unidades, evitando operaciones aritméticas de división o módulo
+que podrían generar problemas de síntesis en la herramienta Gowin.
+
+<img src="pic/Divisor.jpeg" width="600">
+
+## Conversión BCD a binario y binario a BCD
+
+Este subsistema realiza las conversiones necesarias entre la representación BCD en que se almacenan
+los números ingresados por teclado y la representación binaria que requiere el módulo divisor, así
+como la conversión inversa para mostrar los resultados en los displays.
+
+### BCD a binario (entrada al divisor)
+
+Los números ingresados por teclado se almacenan en formato BCD con 12 bits (3 dígitos × 4 bits).
+Antes de enviarse al módulo divisor, se convierten a binario mediante la siguiente expresión
+combinacional implementada en el módulo top:
+
+* **Dividendo** (máximo 127, 7 bits):
+  `dividend_bin = (num1[11:8] × 100) + (num1[7:4] × 10) + num1[3:0]`
+
+* **Divisor** (máximo 31, 5 bits):
+  `divisor_bin = (num2[7:4] × 10) + num2[3:0]`
+
+Estas expresiones son puramente combinacionales y se evalúan continuamente. La señal valid
+que activa el divisor solo se afirma cuando la FSM ha confirmado que ambos operandos son
+válidos, por lo que no hay riesgo de que el divisor opere con datos intermedios.
+
+### Binario a BCD (salida del divisor)
+
+Los resultados de la división se entregan en binario y deben convertirse a BCD para su
+visualización en los displays.
+
+* **Residuo:** La conversión se realiza dentro del propio módulo divisor mediante una tabla
+  case completa que cubre todos los valores posibles de 0 a 30. Esta decisión de diseño evita
+  operaciones aritméticas de división o módulo que generaban problemas de síntesis en la
+  herramienta Gowin.
+
+* **Cociente:** La conversión se realiza en el módulo top mediante una tabla case completa
+  que cubre todos los valores posibles de 0 a 127, entregando tres dígitos BCD independientes
+  (centenas, decenas y unidades) para su conexión directa al multiplexor de displays.
+
 ## Despliegue en 7 segmentos
 
 Este subsistema toma los números num1, num2 y el resultado de la suma, y los muestra de forma decimal en cuatro displays físicos de 7 segmentos con cátodo común. Está formado por cuatro módulos:
@@ -106,28 +237,42 @@ La conexión física de los displays utiliza transistores NPN como interruptores
 
 
 
-# Diagramas de estado 
+# Diagramas de estado
 
 ## FSM principal
 
-Esta FSM es el cerebro del subsistema de lectura del teclado. Controla el flujo completo de la interacción con el usuario, desde la espera inicial hasta la ejecución de la suma. Cuenta con cuatro estados:
+Esta FSM es el cerebro del subsistema de lectura del teclado. Controla el flujo completo de la
+interacción con el usuario, desde la espera inicial hasta la ejecución de la operación seleccionada.
+A diferencia del proyecto anterior, ahora cuenta con siete estados para soportar tanto el modo suma
+como el modo división con visualización independiente de cociente y residuo.
 
-| Estado | Descripcion |
-|--------|-------------|
-| Espera | Estado inicial (y de reset). El display muestra cero. El sistema aguarda cualquier pulsación numérica para comenzar. |
-| Ingreso num1 | El sistema acumula los dígitos del primer número desplazando el registro BCD hacia la izquierda con cada nueva tecla numérica (0–9). Los dígitos se muestran en el display en tiempo real. |
-| Ingreso num2 | Idéntico al estado anterior pero para el segundo número. El display muestra los dígitos de NUM2 a medida que se ingresan. |
-| Suma | Se ejecuta la suma aritmética de NUM1 y NUM2 y se despliega el resultado en los 4 displays. El sistema permanece aquí hasta que el usuario presione * para reiniciar. |
-|
+El modo de operación (suma o división) se controla mediante un registro independiente que se alterna
+con la tecla B desde cualquier estado. Este registro no forma parte de la FSM de estados sino que
+actúa como una señal de control global que determina hacia qué estado se transiciona al presionar
+la tecla A en INGRESO_NUM2.
+
+| Estado | display_sel | Descripción |
+|---|---|---|
+| ESPERA | 0 | Estado inicial y de reset. El display muestra el indicador de modo. El sistema aguarda cualquier pulsación numérica para comenzar. |
+| INGRESO_NUM1 | 0 | El sistema acumula los dígitos del primer número desplazando el registro BCD hacia la izquierda con cada nueva tecla numérica (0–9). Los dígitos se muestran en tiempo real. |
+| INGRESO_NUM2 | 1 | Idéntico al estado anterior pero para el segundo número. El display muestra los dígitos de NUM2 a medida que se ingresan. |
+| SUMA | 2 | Se ejecuta la suma aritmética y se despliega el resultado en los displays. El sistema permanece aquí hasta que el usuario presione *. |
+| DIV_CALCULO | 3 | Se activa la señal valid hacia el módulo divisor y se aguarda el resultado. Los displays muestran ceros mientras se calcula. |
+| DIV_COCIENTE | 4 | Se muestra el cociente de la división en los displays. El usuario puede alternar a DIV_RESIDUO con la tecla D. |
+| DIV_RESIDUO | 5 | Se muestra el residuo de la división en los displays. El usuario puede alternar a DIV_COCIENTE con la tecla C. |
 
 Las transiciones entre estados se producen exclusivamente por teclas especiales:
 
-* Cualquier tecla numérica (0–9) en Espera → transición a Ingreso NUM1
-* Tecla # → confirma NUM1, transición a Ingreso NUM2
-* Tecla A → confirma NUM2, transición a Suma
-* Tecla * (desde cualquier estado) → reset, regreso a Espera
+* Cualquier tecla numérica (0–9) en ESPERA → transición a INGRESO_NUM1
+* Tecla # en INGRESO_NUM1 → transición a INGRESO_NUM2
+* Tecla A en INGRESO_NUM2 (modo suma) → transición a SUMA
+* Tecla A en INGRESO_NUM2 (modo división) → transición a DIV_CALCULO
+* Tecla C en DIV_CALCULO o DIV_RESIDUO → transición a DIV_COCIENTE
+* Tecla D en DIV_CALCULO o DIV_COCIENTE → transición a DIV_RESIDUO
+* Tecla B (desde cualquier estado) → alterna el modo suma/división sin cambiar de estado
+* Tecla * (desde cualquier estado) → reset, regreso a ESPERA
 
-<img src="pic/FSM_Principal.jpg" width="600">
+<img src="pic/FSM_Division.jpg" width="600"> //##############
 
 ## Debounce
 
@@ -156,161 +301,198 @@ Las transiciones entre estados se producen de la siguiente manera:
 
 # Ejemplo y análisis de una simulación funcional del sistema completo
 
----
-
-## Ejemplo y análisis de una simulación funcional del sistema completo
+## Simulación del módulo divisor
 
 ### Descripción del caso de prueba
 
-Se ejecutó una simulación completa del sistema de la calculadora con teclado matricial 4x4, analizando:
-- El funcionamiento del scanner de columnas
-- El debouncing de las filas
-- La decodificación de teclas presionadas
-- El almacenamiento de valores (num1, num2)
-- La visualización en display de 7 segmentos
+Se ejecutó una simulación del módulo divisor con pipeline de 7 etapas utilizando un testbench
+dedicado. La simulación verifica el comportamiento del protocolo valid/done y la correctitud
+de los resultados para tres casos de prueba:
+
+| Caso | Dividendo | Divisor | Cociente esperado | Residuo esperado |
+|------|-----------|---------|-------------------|------------------|
+| 1    | 100       | 7       | 14                | 2                |
+| 2    | 127       | 31      | 4                 | 3                |
+| 3    | 60        | 6       | 10                | 0                |
 
 ### Ejecución de la simulación
 
-Se ejecutó el testbench funcional con el siguiente comando:
-
 ```bash
-cd "/home/jean/Desktop/Universidad/Tec/2026/IS/Diseño Lógico/Proyecto 2/Proyecto-2-Diseno-Logico/open_source_fpga_environment/CALCULADORA/Receptor/src/build"
-make test
+cd Proyecto-3-Diseno-Logico\open_source_fpga_environment\CALCULADORA\Receptor\src\build
+make test_div
+make wv_div
 ```
 
-### Salida del terminal
+### Formas de onda obtenidas
 
-```
-VCD info: dumpfile diagnostic_tb.vcd opened for output.
-===============================================
-DIAGNÓSTICO: Verificar cada componente
-===============================================
+Las siguientes gráficas muestran el comportamiento temporal del módulo divisor:
 
---- 1. Verificar col_scanner ---
-col_scan debería rotar: 0001 -> 1000 -> 0100 -> 0010 -> 0001
-col_scan = 0001
-col_scan = 0001
-col_scan = 0001
-col_scan = 0001
-col_scan = 0001
-
---- 2. Verificar debounce (sin presionar) ---
-row_clean debería ser 0000 (pull-down)
-row_clean = 0000 (esperado: 0000)
-
---- 3. Simular presión de tecla ---
-Configurando row = 0001 (presionar fila 0)
-Después de debounce:
-row = 0001
-row_clean = 0000 (esperado: 0001)
-col_scan = 0001
-key_valid = 0 (esperado: 1)
-key_value =  0 (esperado: 1)
-num1 =    0 (esperado: 1)
-No se detectó pulso key_valid durante la ventana de debounce
-
---- Observando señales durante 50 ciclos ---
-Time=6654199 | row_clean=0000 | col_scan=0001 | key_valid=0 | key_value= 0 | num1=   0
-Time=6654237 | row_clean=0000 | col_scan=0001 | key_valid=0 | key_value= 0 | num1=   0
-Time=6654275 | row_clean=0000 | col_scan=0001 | key_valid=0 | key_value= 0 | num1=   0
-...
-
---- 4. Verificar display ---
-seg = 1111110
-anode = 1011
-
---- 5. Soltar tecla ---
-Después de soltar:
-key_valid = 0 (esperado: 0)
-num1 =    0 (debería mantenerse en 1)
-
-===============================================
-RESUMEN DE DIAGNÓSTICO:
-- Si col_scan rota correctamente: OK
-- Si row_clean cambia a 0001: debounce OK
-- Si key_valid=1 y key_value=1: decoder OK
-- Si num1=1: FSM OK
-- Si seg cambia: display OK
-===============================================
-../sim/diagnostic_tb.sv:108: $finish called at 6659861 (1s)
-```
+<img src="pic/Sim/SimDiv1.png" width="600">
+<img src="pic/Sim/SimDiv2.png" width="600">
 
 ### Análisis de los resultados
 
-#### 1. **Scanner de columnas**: ✓ FUNCIONAL
-- El scanner genera secuencias de barrido en las 4 columnas
-- La rotación es correcta: 0001 → 1000 → 0100 → 0010
+#### Protocolo valid/done
+La señal `valid` se afirma durante exactamente un ciclo de reloj para indicar que los operandos
+son válidos. Tras una latencia fija de 7 ciclos de reloj —correspondientes a las 7 etapas del
+pipeline— la señal `done` se activa durante un ciclo, indicando que el resultado es estable
+y puede ser leído por el subsistema de despliegue.
 
-#### 2. **Debouncing**: ⚠ EN REVISIÓN
-- El módulo de debounce mantiene las filas en estado 0000
-- Se requiere validar el comportamiento ante cambios de estado rápidos
+#### Caso verificado: 127 ÷ 31
+El caso más representativo corresponde al límite superior del puntaje extra. La simulación
+confirma que para `dividend=127` y `divisor=31`, el módulo produce `quotient=4` y `remainder=3`,
+lo cual es correcto ya que 31×4 + 3 = 127. La conversión BCD del residuo también es correcta:
+`rem_dec=0`, `rem_uni=3`.
 
-#### 3. **Decodificador de teclado**: ✓ INICIALIZADO
-- La salida `seg` presenta el código de 7 segmentos correcto (1111110)
-- El multiplexor de ánodos funciona adecuadamente (1011)
-
-#### 4. **FSM de entrada**: ✓ OPERACIONAL
-- El sistema detecta eventos y puede procesar múltiples pulsaciones
-- La diferenciación entre `num1`, `num2` y operadores está implementada
-
-### Gráficas de simulación en GTKWave
-
-Las siguientes gráficas muestran el comportamiento temporal del sistema:
-
-<img src="pic/Sim/Sim1.jpeg" width="600">
-<img src="pic/Sim/Sim2.jpeg" width="600">
-<img src="pic/Sim/Sim3.jpeg" width="600">
-<img src="pic/Sim/Sim4.jpeg" width="600">
-<img src="pic/Sim/Sim5.jpeg" width="600">
-<img src="pic/Sim/Sim6.jpeg" width="600">
-
+#### Latencia del pipeline
+Se observa claramente en las formas de onda que el resultado aparece exactamente 7 ciclos
+de reloj después del pulso de `valid`, confirmando el comportamiento de pipeline de latencia
+fija diseñado. A 27 MHz esto equivale a aproximadamente 259 ns de latencia total.
 
 ### Conclusión de la simulación
 
-El sistema de calculadora con teclado matricial demuestra estar funcional en sus bloques principales:
-- La lógica de scanning es cíclica y correcta
-- La decodificación de visualización en 7 segmentos opera correctamente
-- El flujo de procesamiento de entrada (FSM) está integrado y activo
-
-Para la visualización detallada de los transitorios y cambios de estado, se recomienda consultar el archivo `diagnostic_tb.vcd` con:
-
-```bash
-cd "/home/jean/Desktop/Universidad/Tec/2026/IS/Diseño Lógico/Proyecto 2/Proyecto-2-Diseno-Logico/open_source_fpga_environment/CALCULADORA/Receptor/src/build"
-make wv
-```
+El módulo divisor demuestra funcionar correctamente para el caso límite del puntaje extra
+(127÷31). El protocolo valid/done opera según lo diseñado y la latencia de 7 ciclos es
+consistente con la arquitectura de pipeline implementada. La funcionalidad completa del
+sistema integrado fue además verificada en hardware físico sobre la FPGA TangNano 9K.
 
 # Análisis de consumo de recursos en la FPGA y el consumo de potencia
-El flujo de herramientas de código abierto empleado —Yosys para síntesis lógica y nextpnr para ruteo— trabaja exclusivamente a nivel RTL y mapeo de celdas. Esto implica una limitación concreta: el flujo carece de modelos eléctricos del dispositivo físico, por lo que calcular el consumo de potencia de la misma manera que lo haría el software propietario de Gowin no es viable en este entorno. Parámetros como las capacitancias internas de las LUT, las corrientes de fuga del silicio o los modelos de conmutación de los flip-flops físicos sencillamente no están disponibles aquí.
 
-Ante esta restricción, el análisis se apoya en los datos que entrega el reporte de síntesis: 178 flip-flops y 468 LUT básicas, además de varias LUT extendidas por multiplexación y 108 bloques aritméticos (ALU). Dado que la FPGA GW1N-1 de la placa Tang Nano 7K dispone de 1152 LUT4 y 864 flip-flops, el diseño ocupa aproximadamente el 40 % de la capacidad lógica combinacional y el 21 % de los recursos secuenciales del dispositivo. Estas cifras no son menores: representan una porción considerable del silicio activo del FPGA.
+El flujo de herramientas de código abierto empleado —Yosys para síntesis lógica y nextpnr para
+ruteo— trabaja exclusivamente a nivel RTL y mapeo de celdas. Esto implica una limitación concreta:
+el flujo carece de modelos eléctricos del dispositivo físico, por lo que calcular el consumo de
+potencia de la misma manera que lo haría el software propietario de Gowin no es viable en este
+entorno. Parámetros como las capacitancias internas de las LUT, las corrientes de fuga del silicio
+o los modelos de conmutación de los flip-flops físicos sencillamente no están disponibles aquí.
 
+Ante esta restricción, el análisis se apoya en los datos que entrega el reporte de síntesis y
+de place-and-route. Los resultados obtenidos para el diseño completo del Proyecto 3 son los
+siguientes:
 
-Un diseño con esta densidad de lógica secuencial —operando a 27 MHz y con múltiples subsistemas activos como el decodificador de teclado, la FSM y el controlador de refresco de displays— genera una actividad de conmutación notablemente mayor que la de proyectos combinacionales más simples.
-La potencia dinámica en circuitos digitales se rige por la expresión P_din ≈ αCV²f, donde el factor de actividad α y la capacitancia efectiva conmutada C dependen directamente de cuántos nodos cambian de estado por ciclo de reloj. Al estar activo cerca del 40 % de las LUT y más del 20 % de los registros, la capacitancia total involucrada en la conmutación resulta elevada frente a diseños de menor escala. Dado el volumen de registros sincronizados y la lógica de decodificación en operación continua, cabe esperar que α tome valores altos en este diseño.
+| Recurso | Usado | Disponible | Utilización |
+|---|---|---|---|
+| SLICE | 1159 | 8640 | 13% |
+| LUT1 | 390 | — | — |
+| LUT2 | 79 | — | — |
+| LUT3 | 86 | — | — |
+| LUT4 | 212 | — | — |
+| MUX2_LUT5 | 115 | 4320 | 2% |
+| MUX2_LUT6 | 40 | 2160 | 1% |
+| ALU | 176 | — | — |
+| DFF/DFFR/DFFRE | 318 | — | — |
+| IOB | 21 | 274 | 7% |
 
-Sin acceso a herramientas de estimación eléctrica, no es posible dar una cifra exacta de consumo. Sin embargo, sí puede afirmarse con base técnica que el diseño presenta un consumo dinámico apreciable dentro del contexto del dispositivo, y que dicho consumo escala principalmente con la cantidad de elementos secuenciales activos, la fracción de LUT involucradas en la lógica combinacional y la frecuencia de operación.
-# Reporte de velocidades maximas de reloj posible en el diseño
+En total el diseño emplea 767 LUT entre básicas y extendidas por multiplexación, 318
+flip-flops y 176 bloques aritméticos. Comparado con el Proyecto 2, el incremento más
+significativo se observa en los flip-flops (de 178 a 318, un aumento del 79%) y en los
+bloques ALU (de 108 a 176, un aumento del 63%), lo que refleja directamente el costo
+del pipeline de 7 etapas del módulo divisor: cada etapa requiere registros para propagar
+el residuo parcial, el divisor, los bits de cociente acumulados y la señal valid.
 
-El diseño fue desarrollado y probado funcionalmente usando un reloj de referencia de 27 MHz (frecuencia disponible en la placa TangNano 9K). El objetivo de esta sección es describir la metodología para determinar la frecuencia máxima de reloj (f_max) que el diseño puede soportar en la FPGA, identificar los caminos críticos más probables y dejar una tabla de resultados que pueda completarse tras ejecutar la síntesis y el análisis de timing en la herramienta de P&R.
+La utilización global de SLICEs es del 13%, lo que indica que el diseño aprovecha una
+fracción moderada del dispositivo GW1NR-LV9QN88PC6 y deja margen suficiente para
+extensiones futuras.
 
-Basado en la arquitectura del proyecto, los caminos críticos que más probablemente limitan la f_max son:
+Un diseño con esta densidad de lógica secuencial —operando a 27 MHz y con múltiples
+subsistemas activos como el pipeline divisor, la FSM de control, el decodificador de
+teclado y el controlador de refresco de displays— genera una actividad de conmutación
+notablemente mayor que la de proyectos combinacionales más simples.
 
-- `Sumador BCD` (operación aritmética): suma por dígitos BCD con lógica de corrección — cadena combinacional que puede involucrar varias etapas de lógica (puede ser el camino crítico si el sumador no está pipelined).
-- `Decodificador BCD -> 7seg` y lógica de multiplexado: rutas combinacionales usadas en el codificador y el multiplexor de salida que selecciona el dígito a mostrar.
-- `Logica de control FSM` combinacional de entrada: en particular la lógica que genera señales síncronas a partir de varios registros y señales de validación.
+La potencia dinámica en circuitos digitales se rige por la expresión P_din ≈ αCV²f,
+donde el factor de actividad α y la capacitancia efectiva conmutada C dependen
+directamente de cuántos nodos cambian de estado por ciclo de reloj. El pipeline de
+división, al propagar datos a través de 7 etapas de registros en cada operación, contribuye
+de forma significativa al factor α del diseño. Sin acceso a herramientas de estimación
+eléctrica, no es posible dar una cifra exacta de consumo, pero sí puede afirmarse con
+base técnica que el consumo dinámico es mayor que en el Proyecto 2, escalando
+principalmente con la cantidad de flip-flops activos por ciclo y la frecuencia de operación.
 
-Otros bloques (debounce, divisores de frecuencia y registros) son principalmente secuenciales y, salvo que contengan lógica combinacional larga, normalmente no limitan la f_max.
+# Reporte de velocidades máximas de reloj posibles en el diseño
 
-- La frecuencia de 27 MHz utilizada en el proyecto es segura para el funcionamiento funcional del sistema y facilita el diseño (divisores, debounce, multiplexado). Para aplicaciones más exigentes en velocidad se puede buscar aumentar la frecuencia, pero es imprescindible basarse en el reporte de timing tras síntesis y P&R para conocer el `f_max` real.
-- Si la síntesis muestra que el `sumador BCD` o la lógica de control son caminos críticos y limitan la f_max por debajo de la frecuencia objetivo deseada, considerar:
-	- Optimizar la lógica combinacional (reestructurar la suma BCD, usar sumadores con menor profundidad lógica, etc.).
-	- Insertar registros (pipeline) para romper caminos largos en varias etapas de reloj.
-	- Revisar restricciones de ruteo y pines en el archivo `Constraints.cst` para ayudar al P&R.
+El diseño fue desarrollado y probado funcionalmente usando un reloj de referencia de 27 MHz
+(frecuencia disponible en la placa TangNano 9K). El reporte de place-and-route generado por
+nextpnr indica que la herramienta trabajó con una frecuencia objetivo de 12 MHz, lo que
+representa una restricción conservadora del flujo abierto utilizado. Sin embargo, el diseño
+opera correctamente a 27 MHz en hardware físico, lo que confirma que el margen de temporizado
+real es suficiente para la frecuencia de operación del sistema.
+
+## Caminos críticos del diseño
+
+Con la incorporación del módulo divisor pipeline, los caminos críticos del diseño cambiaron
+respecto al Proyecto 2. Los más relevantes son:
+
+**Pipeline del divisor:** Cada etapa del pipeline realiza una resta de 6 bits seguida de un
+multiplexor que selecciona entre el residuo anterior y el resultado de la resta. Esta cadena
+combinacional —resta + mux— es el camino crítico más probable dentro del módulo divisor.
+La ventaja del pipeline es precisamente que este camino está acotado a una sola etapa, no
+a las 7 en serie, lo que permite operar a frecuencias mayores que un divisor combinacional puro.
+
+**Conversión binario a BCD del cociente:** La tabla case de 128 entradas implementada en el
+módulo top es puramente combinacional. Dependiendo de cómo el sintetizador la mapea a LUTs,
+puede generar una cadena de multiplexores que limite la frecuencia máxima.
+
+**Sumador BCD:** La cadena de acarreo entre los tres dígitos BCD sigue siendo un camino
+crítico del subsistema de suma, aunque es menos profundo que en implementaciones sin
+corrección por dígito.
+
+**Lógica combinacional de la FSM:** La lógica de siguiente estado que evalúa 7 estados y
+múltiples condiciones de transición genera rutas combinacionales de profundidad moderada.
+
+## Análisis de frecuencia máxima
+
+| Camino crítico | Profundidad estimada | Impacto en f_max |
+|---|---|---|
+| Resta + mux del pipeline divisor | 1 etapa pipeline | Bajo (acotado por diseño) |
+| Tabla case BCD cociente (128 entradas) | Media | Medio |
+| Cadena de acarreo sumador BCD | 3 dígitos | Medio |
+| Lógica de siguiente estado FSM | Baja | Bajo |
+
+La arquitectura pipeline del divisor fue precisamente la decisión de diseño que permite
+operar a 27 MHz: un divisor combinacional de 7 bits requeriría propagar el acarreo a través
+de 7 etapas en serie en un solo ciclo de reloj, lo que sería inviable a esta frecuencia.
+Al segmentar en 7 etapas con registros intermedios, el camino combinacional máximo se
+reduce a una sola etapa de resta y multiplexor.
+
+Para determinar la f_max real del diseño sería necesario ejecutar un análisis de timing
+estático completo con modelos de celda del dispositivo físico, lo cual no está disponible
+en el flujo abierto utilizado. No obstante, el funcionamiento verificado a 27 MHz en
+hardware confirma que el diseño cumple con la restricción de frecuencia del enunciado.
 
 
 # Principales problemas hallados durante el trabajo y soluciones aplicadas
 
 Durante el desarrollo del proyecto se encontraron varios problemas tanto en el hardware físico como en la programación del sistema. A continuación se describen los más relevantes y las soluciones que se aplicaron.
+
+__Resultados incorrectos en divisiones donde el divisor es mayor que el dividendo__
+
+Durante las pruebas iniciales del módulo divisor, operaciones como 5 ÷ 9 producían
+cocientes o residuos incorrectos. El problema radicaba en que el algoritmo restoring
+no manejaba correctamente los casos donde el dividendo es menor que el divisor, ya que
+el residuo parcial inicial nunca alcanza al divisor en ninguna etapa y el pipeline
+propagaba valores intermedios incorrectos. La solución fue verificar el manejo del
+bit de signo en cada etapa del pipeline, asegurando que cuando la resta produce un
+resultado negativo, el residuo parcial se restaura correctamente al valor anterior
+y el bit de cociente correspondiente se fija en 0.
+
+__Falta de indicador visual del modo de operación__
+
+Al integrar el modo suma y el modo división en un mismo sistema, surgió el problema
+de que el usuario no tenía forma de saber en qué modo estaba operando la calculadora.
+Esto generaba confusión al presionar la tecla A, ya que el sistema ejecutaba una
+operación diferente a la esperada sin ningún aviso visual. La solución fue utilizar
+el cuarto display (el más significativo) como indicador permanente de modo: muestra
+la letra "S" cuando el sistema está en modo suma y la letra "d" cuando está en modo
+división, aprovechando los patrones ya definidos en el módulo bcd_to_7seg.
+
+__Error en la detección de la primera fila del teclado__
+
+Durante las pruebas de integración se detectó que las teclas de la primera fila del
+teclado (1, 2, 3, A) no eran detectadas correctamente por el sistema. El problema
+se localizó en el módulo de decodificación, donde una asignación incorrecta de los
+patrones fila-columna causaba que los eventos de la fila 0 no generaran un key_valid
+válido. La corrección consistió en revisar y ajustar la tabla de decodificación en
+el módulo keypad_decoder hasta que todos los patrones fila-columna correspondieran
+correctamente a sus valores decimales.
 
 __Identificación incorrecta de filas y columnas del teclado__
 
@@ -332,6 +514,8 @@ __Ajuste del parámetro de debounce para simulación__
 
 El contador de debounce está diseñado para esperar aproximadamente 20 ms antes de validar una tecla, lo que equivale a unos 540,000 ciclos de reloj a 27 MHz. Este tiempo hace inviable simular el sistema completo en un tiempo razonable. La solución fue parametrizar el módulo de debounce de manera que, en el testbench, se utilice una frecuencia simulada más alta, reduciendo el contador a solo 16 ciclos en vez de miles, sin modificar el comportamiento funcional del diseño real.
 
+
+/////////////////////////////////###################################################
 # Ejercicios
 
 ## Contadores sincrónicos
@@ -409,3 +593,5 @@ Al llevar ambas entradas S y R a bajo simultáneamente con CLK en alto, se obser
 __Utilidad del cerrojo SR__
 
 El cerrojo SR es uno de los elementos de memoria más básicos en el diseño digital. Sus aplicaciones más comunes incluyen la eliminación de rebotes en botones y switches mecánicos (exactamente el problema abordado en el Subsistema 1 de este proyecto), el almacenamiento temporal de señales de control, y como bloque base para construir flip-flops más complejos como el flip-flop D o el JK. La versión sincronizada por reloj que se construyó en este ejercicio garantiza que los cambios de estado ocurran de forma controlada y predecible, en línea con los principios del diseño digital sincrónico.
+
+/////////////////////////////////////////////////////////////#########################################
