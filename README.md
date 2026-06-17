@@ -272,7 +272,7 @@ Las transiciones entre estados se producen exclusivamente por teclas especiales:
 * Tecla B (desde cualquier estado) → alterna el modo suma/división sin cambiar de estado
 * Tecla * (desde cualquier estado) → reset, regreso a ESPERA
 
-<img src="pic/FSM_Division.jpg" width="600"> //##############
+<img src="pic/FSM_Division.jpg" width="600">
 
 ## Debounce
 
